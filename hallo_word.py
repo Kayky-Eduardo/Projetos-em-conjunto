@@ -1,2 +1,2 @@
-for i in 'Hallo World':
+for i in 'Hello World':
     print(i)
