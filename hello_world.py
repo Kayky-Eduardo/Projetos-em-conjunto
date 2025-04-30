@@ -1,7 +1,11 @@
+from kivy.app import App
+from kivy.uix.button import Button
 
-a = 9
-b = -8
+class MeuApp(App):
+    def build(self):
+        return Button(text="Clique aqui", on_press=self.mudar_texto)
 
-divisa = a * b
+    def mudar_texto(self, instancia):
+        instancia.text = "Clicado!"
 
-print(divisa)
+MeuApp().run()
