@@ -1,10 +1,7 @@
-print('Hello World!')
 
-a = 6
-b = 0
+a = 9
+b = -8
 
-multipica = a ** b
+divisa = a * b
 
-resultado = multipica
-print(f'{resultado} = 1')
-
+print(divisa)
