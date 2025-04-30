@@ -3,9 +3,17 @@ from kivy.uix.button import Button
 
 class MeuApp(App):
     def build(self):
-        return Button(text="Clique aqui", on_press=self.mudar_texto)
+        self.botao = Button(
+            text="Clique aqui",
+            background_normal='',
+            background_color=(1, 0.4, 0.7, 1)  # Rosa
+        )
+        self.botao.bind(on_press=self.mudar_cor)
+        return self.botao
 
-    def mudar_texto(self, instancia):
-        instancia.text = "Clicado!"
+    def mudar_cor(self, instancia):
+        # Muda para um tom diferente de rosa ao clicar
+        instancia.background_color = (1, 0, 0.5, 1)
+        instancia.text = "Mudou!"
 
 MeuApp().run()
