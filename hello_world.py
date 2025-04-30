@@ -1,5 +1,10 @@
 print('Hello World!')
 
-print('now his think aout me every night oooo, isnt that sweet? I THINK SOOOO')
+a = 6
+b = 0
 
+multipica = a ** b
+
+resultado = multipica
+print(f'{resultado} = 1')
 
