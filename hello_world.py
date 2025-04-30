@@ -1,11 +1,14 @@
-print('Hello World!')
+from kivy.app import App
+from kivy.uix.button import Button
 
-a = 6
-b = 0
+class MeuApp(App):
+    def build(self):
+        self.botao = Button(
+            text="Clique aqui",
+            background_normal='',
+            background_color=(1, 0.4, 0.7, 1)  # Rosa
+        )
+        self.botao.bind(on_press=self.mudar_cor)
+        return self.botao
 
-multipica = a ** b
-
-resultado = multipica
-print(f'{resultado} = ppenis')
-
-
+MeuApp().run()
