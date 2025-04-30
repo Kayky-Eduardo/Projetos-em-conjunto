@@ -6,5 +6,6 @@ b = 0
 multipica = a ** b
 
 resultado = multipica
-print(f'{resultado} = 1')
+print(f'{resultado} = ppenis')
+
 
