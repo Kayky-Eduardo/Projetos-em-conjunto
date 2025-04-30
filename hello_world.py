@@ -11,9 +11,4 @@ class MeuApp(App):
         self.botao.bind(on_press=self.mudar_cor)
         return self.botao
 
-    def mudar_cor(self, instancia):
-        # Muda para um tom diferente de rosa ao clicar
-        instancia.background_color = (1, 0, 0.5, 1)
-        instancia.text = "Mudou!"
-
 MeuApp().run()
