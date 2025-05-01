@@ -17,7 +17,7 @@ Posterior sincronização com servidor.)
 
 TABLES
 funcionario - id | cargoid | pontoid | 
-cargo - id | 
+cargo - id | funcionarioid
 vendas
 estoque
 produção
