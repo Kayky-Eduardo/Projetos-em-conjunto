@@ -1,0 +1,32 @@
+login para Gerente, funcionário e adm do sistema.
+
+Painel de Monitoramento (Dashboard de Indicadores)
+Aplicativo que mostra indicadores de desempenho (vendas, produção, chamados abertos, status do funcionário(pausas), ...) em tempo real. Fazer uma função que altera entre porcentagem e números padrão.
+
+Soluções para RH ou Controle de Frequência
+Registro de ponto via login/ID.
+
+Interface para supervisores aprovarem ou criarem pausas(E limitação de uso), horarios, folgas, etc.
+
+
+TRANSFORMAR EM CSV (
+Formulários Offline para Coleta de Dados
+Preenchimento local (em visitas, treinamentos ou inventários).
+Posterior sincronização com servidor.)
+
+
+TABLES
+funcionario - id | cargoid | pontoid | 
+cargo
+vendas
+estoque
+produção
+pagamento
+encomendas
+clientes
+categoria de produto
+carrinho(produtos no carrinho de compra)
+ponto/status-funcionario
+lojas
+horarios/folgas
+chat - funcionarioid | clienteid 
