@@ -29,4 +29,4 @@ carrinho(produtos no carrinho de compra)
 ponto/status-funcionario
 lojas
 horarios/folgas
-chat - funcionarioid | clienteid 
+chat - funcionarioid | clienteid |
