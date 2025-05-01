@@ -17,7 +17,7 @@ Posterior sincronização com servidor.)
 
 TABLES
 funcionario - id | cargoid | pontoid | 
-cargo - id | funcionarioid
+cargo - id | funcionarioid |
 vendas
 estoque
 produção
@@ -29,4 +29,4 @@ carrinho(produtos no carrinho de compra)
 ponto/status-funcionario
 lojas
 horarios/folgas
-chat - funcionarioid | clienteid |
+chat - funcionarioid | clienteid | 
