@@ -1,18 +1,23 @@
 from kivy.app import App
 from kivy.uix.button import Button
+from kivy.uix.label import Label
+from kivy.uix.gridlayout import GridLayout
+from kivy.uix.textinput import TextInput
 
+class MeuLayoutGrid(GridLayout):
+    def __init__(self, **kwargs):
+        super(MeuLayoutGrid, self).__init__(**kwargs)
+        self.cols = 5
+        self.rows = 5
+        self.add_widget(Label(text="Login: "))
+        self.nome = TextInput(multiline=False)
+        
 class MeuApp(App):
     def build(self):
         self.botao = Button(
-            text="Clique aqui",
-            background_normal='',
-            background_color=(1, 0.4, 0.7, 1)  # Rosa
+            text="testando",
         )
-        self.botao.bind(on_press=self.mudar_cor)
         return self.botao
-
-    def mudar_cor(self, instance):
-        # Aqui você pode mudar a cor do botão, por exemplo
-        self.botao.background_color = (0.4, 0.7, 1, 1)  # Azul
-
-MeuApp().run()
+    
+if __name__ == '__main__':
+    MeuApp().run()
