@@ -21,6 +21,10 @@ Posterior sincronização com servidor.)
 
 
 
+
+
+
+
 !*************** FUNCIONARIOS **************!
 funcionario - id | cargoid | pontoid | nome | salario | inicio_contrato | fim_contrato
 setor - setorid | nome_setor | responsavelid | 
