@@ -14,19 +14,35 @@ Formulários Offline para Coleta de Dados
 Preenchimento local (em visitas, treinamentos ou inventários).
 Posterior sincronização com servidor.)
 
+!********************************************************************* PENSAR MAIS PARA FRENTE *******************************************!
+!* PENSAR NO PARCELAMENTO 
+!* CARTÃO DÉBITO/CREDITO
+!******************************************************************** ------------------------- *******************************************!
 
 TABLES
-funcionario - id | cargoid | pontoid | 
-cargo - id | funcionarioid |
-vendas - id |
-estoque
-produção
-pagamento
-encomendas
-clientes
-categoria de produto
-carrinho(produtos no carrinho de compra)
-ponto/status-funcionario
-lojas
-horarios/folgas
-chat - funcionarioid | clienteid | 
+
+
+!*************** FUNCIONARIOS **************!
+funcionario - id | cargoid | pontoid | nome | salario | inicio_contrato | fim_contrato
+setor - setorid | nome_setor | responsavelid | 
+cargo - id | nome_cargo | tipo_contrato | setorid | 
+
+
+!*************** PRODUTOS ******************!
+estoque - id | produtoid | qntd_produto | data_validade | 
+produtos - id | nome_produto | tipo_produto |
+
+!*************** VENDAS ********************!
+vendas - id | funcionarioid | compraid | clienteCPF | 
+pagamento_compra - id | compraid | tipo_pagamento | data | 
+compra(produtos no carrinho de compra) - produtoid | qntd_produto | 
+
+!*************** CLIENTES ******************!
+clientes - clienteCPF | telefone1 | telefone2(aceita_null) | email
+endereco - clientid | Cidade | Bairro | Rua | numero | numero_andar(em caso de apartamento)
+
+!*************** ENCOMENDAS ****************!
+encomendas - id | clientcpf | produtoid | data_pedido | data_entrega | 
+
+!************** SUPORTE ********************!
+chat - funcionarioid | clientecpf | data_chat | status_solicitação | motivo
