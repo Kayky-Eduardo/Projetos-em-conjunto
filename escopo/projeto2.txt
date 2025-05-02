@@ -1,0 +1,45 @@
+🔻 MVP DO SISTEMA VAREJISTA (VERSÃO EXECUTÁVEL) 🔻
+1. Funcionalidade principal: Venda presencial
+ Cadastro de produtos
+
+ Cadastro de funcionários (com login)
+
+ Registro de vendas com funcionário vinculado
+
+ Formas de pagamento (dinheiro, crédito, débito)
+
+ Atualização de estoque ao vender
+
+2. Painel gerencial básico (acesso via login de gerente)
+ Relatório de vendas do dia
+
+ Vendas por funcionário
+
+ Produtos mais vendidos
+
+ Estoque abaixo do nível mínimo
+
+3. Controle de estoque
+ Entrada de novos produtos
+
+ Edição de quantidade
+
+ Data de validade
+
+ Alerta visual para vencimentos
+
+4. Sistema de login (mínimo viável)
+ Usuários com cargo (gerente ou vendedor)
+
+ Autenticação por senha
+
+ Restrição de acesso ao painel administrativo
+
+5. Estrutura técnica
+Banco de dados relacional (SQLite ou PostgreSQL)
+
+Backend simples (Flask ou FastAPI)
+
+Interface Kivy (se ainda for sua escolha)
+
+Organização modular do código (sem arquivos gigantes)

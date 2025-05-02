@@ -4,7 +4,7 @@ Painel de Monitoramento (Dashboard de Indicadores)
 Aplicativo que mostra indicadores de desempenho (vendas, produção, chamados abertos, status do funcionário(pausas), ...) em tempo real. Fazer uma função que altera entre porcentagem e números padrão.
 
 Soluções para RH ou Controle de Frequência
-Registro de ponto via login/ID.
+Registro de ponto via login.
 
 Interface para supervisores aprovarem ou criarem pausas(E limitação de uso), horarios, folgas, etc.
 
@@ -20,10 +20,10 @@ Posterior sincronização com servidor.)
 !******************************************************************** ------------------------- *******************************************!
 
 
-!================================ TABELAS ==============================================!
+!===================================== TABELAS ==============================================!
 
 !*************** FUNCIONARIOS **************!
-funcionario - id | cargoid | pontoid | nome | salario | inicio_contrato | fim_contrato
+funcionario - id | cargoid | pontoid | nome | salario | inicio_contrato | fim_contrato | senha
 setor - setorid | nome_setor | responsavelid | 
 cargo - id | nome_cargo | tipo_contrato | setorid | 
 
