@@ -15,7 +15,7 @@ class MeuLayoutGrid(GridLayout):
 class MeuApp(App):
     def build(self):
         self.botao = Button(
-            text="testando",
+            text="testando 1 2 3",
         )
         return self.botao
     
