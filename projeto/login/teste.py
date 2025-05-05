@@ -10,8 +10,6 @@ class MeuLayout(GridLayout):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-
-
 class MeuApp(App):
     def build(self):
         return MeuLayout()

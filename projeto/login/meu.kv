@@ -7,16 +7,13 @@
 
     Label:
         text: 'Login: '
-        size_hint: 0.3, None
-        height: 40
 
     TextInput:
         id: usercpf
-        size_hint: 0.7, None
-        height: 40
         hint_text: 'Digite a sua senha'
 
-    Button:
-        size_hint: 1, None
-        height: 50
-        text: 'Enviar'
+    GridLayout:
+        rows: 1
+        cols: 1
+        Button:
+            text: 'Enviar'
