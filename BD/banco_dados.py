@@ -23,7 +23,7 @@ cursor.execute('''
 
 cursor.execute('''
                create table if not exists funcionario (
-               funcionario_id integer primary key,
+               funcionario_cpf integer primary key,
                cargo_id integer not null, 
                nome_funcionario text not null,
                salario integer not null,
