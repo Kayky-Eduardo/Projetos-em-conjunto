@@ -125,3 +125,5 @@ cursor.execute('''
 
 conexao.commit()
 conexao.close()
+
+# convertendo todo o direito do codigo para kayky eduardo e davi
