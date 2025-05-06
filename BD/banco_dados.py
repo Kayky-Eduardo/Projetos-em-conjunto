@@ -1,6 +1,6 @@
 import sqlite3
 
-conexao = sqlite3.connect("C:\jess\Projetos-em-conjunto")
+conexao = sqlite3.connect("BD/projeto.db")
 cursor = conexao.cursor()
 
 cursor.execute('''

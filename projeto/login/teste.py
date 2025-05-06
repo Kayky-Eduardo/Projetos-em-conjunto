@@ -8,7 +8,8 @@ from kivy.properties import ObjectProperty
 class MeuLayout(GridLayout):
     f_cpf = ObjectProperty(None)
     def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+        super(MeuLayout, self).__init__(**kwargs)
+        self
 
 class MeuApp(App):
     def build(self):
