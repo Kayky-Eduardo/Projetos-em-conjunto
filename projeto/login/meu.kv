@@ -1,0 +1,28 @@
+<MeuLayout>:
+    cols: 1
+    cpf: cpf
+    senha: senha
+    enviar: enviar
+
+    GridLayout:
+        cols: 2
+
+        Label:
+            text: "CPF: "
+
+        TextInput:
+            id: cpf
+            multiline: False
+            
+        Label:
+            text: "Senha: "
+
+        TextInput:
+            id: senha
+            multiline: False
+
+    Button:
+        id: enviar
+        text: "Enviar"
+        font_size: 20
+        on_press: root.verificar()
