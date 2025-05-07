@@ -2,7 +2,6 @@ import os
 import sqlite3
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
-from kivy.uix.widget import Widget
 from kivy.properties import ObjectProperty
 
 class MeuLayout(GridLayout):
