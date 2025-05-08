@@ -1,13 +1,14 @@
 import os
 from kivy.app import App
-from kivy.uix.gridlayout import GridLayout
-from kivy.uix.widget import Widget
-from kivy.properties import ObjectProperty
+from kivy.uix.floatlayout import FloatLayout
 
-class Meulayout(GridLayout):
-    pass
-
+class MeuLayout(FloatLayout):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
 
 class MeuApp(App):
     def build(self):
         return MeuLayout()
+
+if __name__ == '__main__':
+    MeuApp().run()
