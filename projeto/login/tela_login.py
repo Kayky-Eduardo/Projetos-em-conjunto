@@ -5,6 +5,10 @@ from kivy.uix.behaviors import ButtonBehavior
 from kivy.uix.image import Image
 from kivy.properties import ObjectProperty
 from kivy.lang import Builder
+from kivy.uix.screenmanager import Screen
+
+class TelaPrimeira(Screen):
+    pass
 
 class ImageButton(ButtonBehavior, Image):
         pass
@@ -27,7 +31,7 @@ class Tela_Login(GridLayout):
 
         if resultado:
             self.enviar.text = "Login bem-sucedido!"
-            Builder.load_file('menu/meu.kv')
+            Builder.load_file('projeto/menu/menu.kv')
         else:
             self.enviar.text = "CPF ou senha inválidos."
 
