@@ -4,11 +4,12 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.behaviors import ButtonBehavior
 from kivy.uix.image import Image
 from kivy.properties import ObjectProperty
+from kivy.lang import Builder
 
 class ImageButton(ButtonBehavior, Image):
         pass
 
-class MeuLayout(GridLayout):
+class Tela_Login(GridLayout):
     cpf = ObjectProperty(None)
     senha = ObjectProperty(None)
     enviar = ObjectProperty(None)
@@ -26,15 +27,16 @@ class MeuLayout(GridLayout):
 
         if resultado:
             self.enviar.text = "Login bem-sucedido!"
+            Builder.load_file('menu/meu.kv')
         else:
             self.enviar.text = "CPF ou senha inválidos."
 
     def alternar_visibilidade(self):
         self.senha_visivel = not self.senha_visivel
 
-class MeuApp(App):
+class LoginApp(App):
     def build(self):
-        return MeuLayout()
+        return Tela_Login()
 
 if __name__ == '__main__':
-    MeuApp().run()
+    Tela_Login().run()
