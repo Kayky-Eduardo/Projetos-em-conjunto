@@ -22,9 +22,16 @@
             multiline: False
             password: not root.senha_visivel
 
-        Button:
-            text: "Mostrar" if not root.senha_visivel else "Ocultar"
+        ImageButton:
+            source: 'projeto/img/aberto.png' if root.senha_visivel else 'projeto/img/fechado.png'
+
+            size_hint: None, None
+            size: 100, 50
             on_press: root.alternar_visibilidade()
+
+        # Button:
+        #     text: "Mostrar" if not root.senha_visivel else "Ocultar"
+        #     on_press: root.alternar_visibilidade()
             
     Button:
         id: enviar

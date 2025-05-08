@@ -1,7 +1,12 @@
 import sqlite3
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
+from kivy.uix.behaviors import ButtonBehavior
+from kivy.uix.image import Image
 from kivy.properties import ObjectProperty
+
+class ImageButton(ButtonBehavior, Image):
+        pass
 
 class MeuLayout(GridLayout):
     cpf = ObjectProperty(None)
