@@ -1,4 +1,3 @@
-import os
 import sqlite3
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
@@ -8,12 +7,11 @@ class MeuLayout(GridLayout):
     cpf = ObjectProperty(None)
     senha = ObjectProperty(None)
     enviar = ObjectProperty(None)
+    senha_visivel = ObjectProperty(False)
 
     def verificar(self):
         cpf = self.cpf.text
         senha = self.senha.text
-        os.system('cls')
-        print(f'CPF: {cpf}\nSenha: {senha}')
 
         conexao = sqlite3.connect("BD/projeto.db")
         cursor = conexao.cursor()
@@ -25,6 +23,9 @@ class MeuLayout(GridLayout):
             self.enviar.text = "Login bem-sucedido!"
         else:
             self.enviar.text = "CPF ou senha inválidos."
+
+    def alternar_visibilidade(self):
+        self.senha_visivel = not self.senha_visivel
 
 class MeuApp(App):
     def build(self):

@@ -20,7 +20,12 @@
         TextInput:
             id: senha
             multiline: False
+            password: not root.senha_visivel
 
+        Button:
+            text: "Mostrar" if not root.senha_visivel else "Ocultar"
+            on_press: root.alternar_visibilidade()
+            
     Button:
         id: enviar
         text: "Enviar"
