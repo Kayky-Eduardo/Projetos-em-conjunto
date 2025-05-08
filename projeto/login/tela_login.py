@@ -39,4 +39,4 @@ class LoginApp(App):
         return Tela_Login()
 
 if __name__ == '__main__':
-    Tela_Login().run()
+    LoginApp().run()
