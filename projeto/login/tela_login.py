@@ -4,7 +4,6 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.behaviors import ButtonBehavior
 from kivy.uix.image import Image
 from kivy.properties import ObjectProperty
-from kivy.lang import Builder
 from kivy.uix.screenmanager import Screen
 
 class TelaPrimeira(Screen):
@@ -31,7 +30,6 @@ class Tela_Login(GridLayout):
 
         if resultado:
             self.enviar.text = "Login bem-sucedido!"
-            Builder.load_file('projeto/menu/menu.kv')
         else:
             self.enviar.text = "CPF ou senha inválidos."
 
