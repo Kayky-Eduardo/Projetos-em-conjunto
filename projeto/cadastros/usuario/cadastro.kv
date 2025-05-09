@@ -1,0 +1,59 @@
+<Cadastro_Usuario>
+    cols: 1
+    nome: nome
+    cpf: cpf
+    senha: senha
+    confirmar_senha: confirmar_senha
+    enviar: enviar
+    salario: salario
+
+    GridLayout:
+        cols: 2
+        
+        Label:
+            text:'Nome:'
+
+        TextInput:
+            id: nome
+            hint_text: 'Digite o nome '
+            multiline: False
+
+        Label:
+            text:'Digite o CPF: '
+        
+        TextInput:
+            id: cpf
+            multiline: False
+            hint_text: 'Digite o CPF'
+
+        Label:
+            text:'Digite a senha: '
+
+        TextInput:
+            id: senha
+            hint_text: 'Digite a senha'
+            multiline: False
+            password: True
+
+        Label:
+            text:'Confirmar senha: '
+
+        TextInput:
+            id: confirmar_senha
+            multiline: False
+            hint_text: 'Confirmar senha'
+            password: True
+
+        Label:
+            text:'Salário: '
+
+        TextInput:
+            id: salario
+            multiline: False
+            hint_text: 'Digite o salário'
+
+    Button:
+        id: enviar
+        text: 'Enviar'
+        font_size: 20
+        # on_press: root.adicionar_banco()
