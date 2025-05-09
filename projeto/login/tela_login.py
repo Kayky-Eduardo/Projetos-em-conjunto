@@ -5,6 +5,7 @@ from kivy.uix.behaviors import ButtonBehavior
 from kivy.uix.image import Image
 from kivy.properties import ObjectProperty
 from kivy.uix.screenmanager import Screen
+from kivy.uix.floatlayout import FloatLayout
 
 class TelaPrimeira(Screen):
     pass
@@ -12,7 +13,7 @@ class TelaPrimeira(Screen):
 class ImageButton(ButtonBehavior, Image):
         pass
 
-class Tela_Login(GridLayout):
+class Tela_Login(FloatLayout):
     cpf = ObjectProperty(None)
     senha = ObjectProperty(None)
     enviar = ObjectProperty(None)
