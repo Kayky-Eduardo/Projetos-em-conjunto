@@ -6,6 +6,7 @@
     confirmar_senha: confirmar_senha
     enviar: enviar
     salario: salario
+    cargo_id: cargo_id
 
     GridLayout:
         cols: 2
@@ -51,6 +52,14 @@
             id: salario
             multiline: False
             hint_text: 'Digite o salário'
+
+        Label:
+            text:'Cargo ID: '
+
+        TextInput:
+            id: cargo_id
+            multiline: False
+            hint_text: 'Digite o cargo_id'
 
     Button:
         id: enviar
