@@ -105,7 +105,7 @@ cursor.execute('''
 
 cursor.execute('''
                create table if not exists encomenda (
-               encomenda_id integer primary key,
+               encomenda_id integer auto increment primary key,
                cliente_cpf text, 
                produto_id integer,
                qntd_produto integer,
