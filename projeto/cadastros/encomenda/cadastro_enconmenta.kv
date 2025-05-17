@@ -1,0 +1,53 @@
+<Cadastro_Encomenda>
+    cliente_cpf: cliente_cpf
+    produto_id: produto_id
+    qntd_produto: qntd_produto
+    data_pedido: data_pedido
+    data_entrega: data_entrega
+    enviar: enviar
+    cols: 1
+
+    GridLayout:
+        cols: 2
+        
+        Label:
+            text:'CPF do cliente:'
+
+        TextInput:
+            id: cliente_cpf
+            hint_text: 'Digite o CPF do cliente '
+            multiline: False
+
+        Label:
+            text:'Digite o id do produto: '
+        
+        TextInput:
+            id: produto_id
+            multiline: False
+
+        Label:
+            text:'Quantidade do produto: '
+
+        TextInput:
+            id: qntd_produto
+            multiline: False
+
+        Label:
+            text: 'Data que o pedido foi realizado: '
+
+        TextInput:
+            id: data_pedido
+            multiline: False
+
+        Label:
+            text:'Data previsto para entrega: '
+
+        TextInput:
+            id: data_entrega
+            multiline: False
+
+    Button:
+        id: enviar
+        text: 'Enviar'
+        font_size: 20
+        on_press: root.adicionar_banco()

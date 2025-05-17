@@ -1,0 +1,44 @@
+<Cadastro_Cliente>
+    cliente_cpf: cliente_cpf
+    tel1: tel1
+    tel2: tel2
+    email: email
+    enviar: enviar
+    cols: 1
+
+    GridLayout:
+        cols: 2
+        
+        Label:
+            text:'CPF:'
+
+        TextInput:
+            id: cliente_cpf
+            multiline: False
+            
+        Label:
+            text:'Digite o telefone: '
+        
+        TextInput:
+            id: tel1
+            multiline: False
+
+        Label:
+            text:'Digite o 2° telefone: '
+
+        TextInput:
+            id: tel2
+            multiline: False 
+
+        Label:
+            text:'Email: '
+
+        TextInput:
+            id: email
+            multiline: False
+
+    Button:
+        id: enviar
+        text: 'Enviar'
+        font_size: 20
+        on_press: root.adicionar_banco()
