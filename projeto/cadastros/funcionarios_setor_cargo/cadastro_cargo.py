@@ -23,10 +23,6 @@ class Cadastro_Cargo(GridLayout):
         nome_cargo_validacao = self.nome_cargo.text
         tipo_contrato_validacao = self.tipo_contrato
         setor_id_validacao = self.setor_id.text
-        print("ID:", cargo_id_validacao)
-        print("Cargo:", nome_cargo_validacao)
-        print("Tipo:", tipo_contrato_validacao)
-        print("Setor ID:", setor_id_validacao)
         
         try:
             conexao = sqlite3.connect('BD/projeto.db')
