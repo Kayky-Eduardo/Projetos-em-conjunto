@@ -1,19 +1,18 @@
 import sqlite3
-from kivy.app import App
-from kivy.uix.gridlayout import GridLayout
+import os
 from kivy.uix.behaviors import ButtonBehavior
 from kivy.uix.image import Image
 from kivy.properties import ObjectProperty
 from kivy.uix.screenmanager import Screen
 from kivy.uix.floatlayout import FloatLayout
-
-class TelaPrimeira(Screen):
-    pass
+from kivy.lang import Builder
 
 class ImageButton(ButtonBehavior, Image):
         pass
 
-class Tela_Login(FloatLayout):
+# Carrega o arquivo KV
+class Tela_Login(Screen, FloatLayout):
+    Builder.load_file(os.path.join('login', 'tela_login.kv'))
     cpf = ObjectProperty(None)
     senha = ObjectProperty(None)
     enviar = ObjectProperty(None)
@@ -36,10 +35,3 @@ class Tela_Login(FloatLayout):
 
     def alternar_visibilidade(self):
         self.senha_visivel = not self.senha_visivel
-
-class LoginApp(App):
-    def build(self):
-        return Tela_Login()
-
-if __name__ == '__main__':
-    LoginApp().run()

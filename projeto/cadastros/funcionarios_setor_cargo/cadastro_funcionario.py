@@ -3,7 +3,6 @@ from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
 from kivy.properties import ObjectProperty
 
-
 class Cadastro_Usuario(GridLayout):
     nome = ObjectProperty(None)
     cpf = ObjectProperty(None)
