@@ -10,6 +10,7 @@ from kivy.lang import Builder
 class ImageButton(ButtonBehavior, Image):
         pass
 
+# Carrega o arquivo KV
 class Tela_Login(Screen, FloatLayout):
     Builder.load_file(os.path.join('login', 'tela_login.kv'))
     cpf = ObjectProperty(None)

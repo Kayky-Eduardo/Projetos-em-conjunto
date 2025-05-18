@@ -16,7 +16,7 @@ class Estoque(Screen):
         # Busca produtos do banco
         conexao = sqlite3.connect('BD/projeto.db')
         cursor = conexao.cursor()
-        cursor.execute('SELECT produto_id, nome_produto, tipo_produto, qntd_produto, preco_produto FROM produto, estoque')
+        cursor.execute('SELECT produto.produto_id, produto.nome_produto, produto.tipo_produto, estoque.qntd_produto FROM produto JOIN estoque ON produto.produto_id = estoque.produto_id')
         cursor.row_factory = sqlite3.Row # para acessar colunas pelo nome (ex: produto['nome_produto'])
         produtos = cursor.fetchall()
         conexao.close()
