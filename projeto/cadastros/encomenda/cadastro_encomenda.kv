@@ -15,7 +15,6 @@
 
         TextInput:
             id: cliente_cpf
-            hint_text: 'Digite o CPF do cliente '
             multiline: False
 
         Label:
@@ -31,6 +30,7 @@
         TextInput:
             id: qntd_produto
             multiline: False
+            hint_text: 'Ex: 1 2 3'
 
         Label:
             text: 'Data que o pedido foi realizado: '
@@ -38,12 +38,14 @@
         TextInput:
             id: data_pedido
             multiline: False
+            hint_text: 'dd/mm/aaaa'
 
         Label:
             text:'Data previsto para entrega: '
 
         TextInput:
             id: data_entrega
+            hint_text: 'dd/mm/aaaa'
             multiline: False
 
     Button:
