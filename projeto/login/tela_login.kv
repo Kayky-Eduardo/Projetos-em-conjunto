@@ -4,20 +4,28 @@
     enviar: enviar
 
     FloatLayout:
+        Image:
+            source: 'projeto/img/fundo.png'
+            allow_stretch: True
+            keep_ratio: False
+            size_hint: 1, 1
+            pos_hint: {'x': 0, 'y': 0}
+
         BoxLayout:
             orientation: 'vertical'
             spacing: 5
             size_hint: None, None
             height: self.minimum_height
             pos_hint: {"center_x": 0.5, "center_y": 0.5}
-            width: 400
-
+            width: 400 
+     
             TextInput:
                 id: cpf
                 hint_text: "CPF"
                 multiline: False
                 size_hint_y: None
                 height: 30
+        
 
             BoxLayout:
                 orientation: 'horizontal'
