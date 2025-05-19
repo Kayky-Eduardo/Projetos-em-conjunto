@@ -36,7 +36,7 @@ cursor.execute('''
 
 cursor.execute('''
                create table if not exists produto (
-               produto_id integer primary key,
+               produto_id integer primary key autoincrement,
                nome_produto text not null,
                tipo_produto text not null,
                preco_produto decimal(10,2) not null

@@ -1,9 +1,7 @@
-<Cadastro_Encomenda>
-    cliente_cpf: cliente_cpf
+<Cadastro_Compra>
+    compra_id: compra_id
     produto_id: produto_id
     qntd_produto: qntd_produto
-    data_pedido: data_pedido
-    data_entrega: data_entrega
     enviar: enviar
     cols: 1
 
@@ -11,10 +9,10 @@
         cols: 2
         
         Label:
-            text:'CPF do cliente:'
+            text:'Compra ID(temporário):'
 
         TextInput:
-            id: cliente_cpf
+            id: compra_id
             multiline: False
 
         Label:
@@ -31,22 +29,6 @@
             id: qntd_produto
             multiline: False
             hint_text: 'Ex: 1 2 3'
-
-        Label:
-            text: 'Data que o pedido foi realizado: '
-
-        TextInput:
-            id: data_pedido
-            multiline: False
-            hint_text: 'aaaa-mm-dd'
-
-        Label:
-            text:'Data previsto para entrega: '
-
-        TextInput:
-            id: data_entrega
-            hint_text: 'aaaa-mm-dd'
-            multiline: False
 
     Button:
         id: enviar
