@@ -30,6 +30,7 @@ class Tela_Login(Screen, FloatLayout):
 
         if resultado:
             self.enviar.text = "Login bem-sucedido!"
+            self.manager.current = 'menu'
         else:
             self.enviar.text = "CPF ou senha inválidos."
 
