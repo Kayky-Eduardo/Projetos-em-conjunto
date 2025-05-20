@@ -16,24 +16,16 @@ class Estoque(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-        # Busca produtos do banco
+    def exibir(self):
+        # Buscanome_produto do banco
         conexao = sqlite3.connect('BD/projeto.db')
         cursor = conexao.cursor()
-        cursor.execute('SELECT nome_produto FROM produto')
-        produtos = cursor.fetchall()
-        print(produtos[0])
+        cursor.execute('''SELECT produto.nome_produto, estoque.qntd_estoque
+                        FROM produto
+                        JOIN estoque ON produto.id_produto = estoque.id_produto;''')
+        produto = cursor.fetchall()
+        print(produto)
         conexao.close()
-        container = self.ids.lista_produtos
-
-        for produto in produtos:
-            nome = produto[0]
-            linha = BoxLayout(size_hint_y=None, height=40)
-            label = Label(text=nome)
-            btn_remover = Button(text="Remover", size_hint_x=None, width=100)
-
-            linha.add_widget(label)
-            linha.add_widget(btn_remover)
-            container.add_widget(linha)
 
 
 # para rodar o código como se fosse o principal

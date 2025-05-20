@@ -3,7 +3,9 @@
     nome_produto: nome_produto
     tipo_produto: tipo_produto
     preco_produto: preco_produto
-    enviar: enviar
+    qntd_produto: qntd_produto
+    validade_produto: validade_produto
+    enviar: enviar 
     cols: 1
 
     GridLayout:
@@ -15,13 +17,15 @@
         TextInput:
             id: produto_id
             multiline: False
+            hint_text:'Digite aqui...'
 
         Label:
-            text:'Digite o nome do produto: '
+            text:'Nome do produto: '
         
         TextInput:
             id: nome_produto
             multiline: False
+            hint_text:'Digite aqui...'
 
         Label:
             text:'tipo do produto: '
@@ -29,6 +33,7 @@
         TextInput:
             id: tipo_produto
             multiline: False
+            hint_text:'Digite aqui...'
 
         Label:
             text: 'Preço produto: '
@@ -36,6 +41,23 @@
         TextInput:
             id: preco_produto
             multiline: False
+            hint_text:'Digite aqui...'
+
+        Label:
+            text:'Quantidade do Produto'
+        
+        TextInput:
+            id: qntd_produto
+            multiline: False
+            hint_text:'Digite aqui...'
+
+        Label:
+            text:'Validade do Produto'
+        
+        TextInput:
+            id: validade_produto
+            multiline: False
+            hint_text:'ex: 2006-03-25'
 
     Button:
         id: enviar

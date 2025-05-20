@@ -2,10 +2,7 @@ import sqlite3
 
 conexao = sqlite3.connect("BD/projeto.db")
 cursor = conexao.cursor()   
-<<<<<<< HEAD
-cursor.execute("SELECT * FROM estoque")
-=======
-cursor.execute("SELECT * FROM funcionario")
->>>>>>> 833cb99344d2458a2d1d56308c51879810a3fcbe
-todos = cursor.fetchall()
-print(todos)
+
+cursor.execute('''SELECT produto.nome_produto, estoque.qntd_produto FROM produto JOIN estoque ON produto  produto.produto_id = estoque.produto_id;''')
+produto = cursor.fetchall()
+print(produto)
