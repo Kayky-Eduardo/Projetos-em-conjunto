@@ -3,18 +3,17 @@ from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
 from kivy.properties import ObjectProperty
 
-
 class Cadastro_Produto(GridLayout):
     produto_id = ObjectProperty(None)
     nome_produto = ObjectProperty(None)
     tipo_produto = ObjectProperty(None)
     preco_produto = ObjectProperty(None)
     enviar = ObjectProperty(None)
-        
+    
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.tipo_contrato = None
-       
+    
     def adicionar_banco(self):
         produto_id_validacao = self.produto_id.text
         nome_produto_validacao = self.nome_produto.text
@@ -35,7 +34,6 @@ class Cadastro_Produto(GridLayout):
         except sqlite3.Error as e:
             self.enviar.text = f'Erro: {e}'
                     
-
 class Cadastro_ProdutoApp(App):
     def build(self):
         return Cadastro_Produto()
