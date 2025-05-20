@@ -1,12 +1,14 @@
 <Cadastro_Usuario>
     cols: 1
-    nome: nome
     cpf: cpf
+    cargo_id: cargo_id
+    nome: nome
+    salario: salario
     senha: senha
     confirmar_senha: confirmar_senha
+    data_admissao: data_admissao
+    fim_contrato: fim_contrato
     enviar: enviar
-    salario: salario
-    cargo_id: cargo_id
 
     GridLayout:
         cols: 2
@@ -61,8 +63,24 @@
             multiline: False
             hint_text: 'Digite o cargo_id'
 
+        Label:
+            text:'Data admissão: '
+
+        TextInput:
+            id: data_admissao
+            multiline: False
+            hint_text: 'aaaa-mm-dd'
+
+        Label:
+            text: 'Fim do contrato: '
+            
+        TextInput:
+            id: fim_contrato
+            multiline: False
+            hint_text: 'aaaa-mm-dd'
+
     Button:
         id: enviar
         text: 'Enviar'
         font_size: 20
-        # on_press: root.adicionar_banco()
+        on_press: root.adicionar_banco()
