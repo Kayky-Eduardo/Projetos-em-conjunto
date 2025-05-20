@@ -2,6 +2,6 @@ import sqlite3
 
 conexao = sqlite3.connect("BD/projeto.db")
 cursor = conexao.cursor()   
-cursor.execute("SELECT * FROM produto")
+cursor.execute("SELECT * FROM funcionario")
 todos = cursor.fetchall()
 print(todos)
