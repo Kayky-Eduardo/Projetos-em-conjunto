@@ -1,0 +1,44 @@
+<Cadastro_Venda>
+    venda_id: venda_id
+    funcionario_id: funcionario_id
+    cliente_cpf: cliente_cpf
+    compra_id: compra_id
+    enviar: enviar
+    cols: 1
+
+    GridLayout:
+        cols: 2
+        
+        Label:
+            text:'Venda ID(temporário): '
+
+        TextInput:
+            id: venda_id
+            multiline: False
+
+        Label:
+            text:'Digite o id do funcionário: '
+        
+        TextInput:
+            id: funcionario_id
+            multiline: False
+
+        Label:
+            text:'Digite o CPF do cliente: '
+
+        TextInput:
+            id: cliente_cpf
+            multiline: False
+
+        Label:
+            text: 'Digite o ID da compra:  '
+
+        TextInput:
+            id: compra_id
+            multiline: False
+
+    Button:
+        id: enviar
+        text: 'Enviar'
+        font_size: 20
+        on_press: root.adicionar_banco()

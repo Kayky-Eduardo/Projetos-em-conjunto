@@ -1,45 +1,20 @@
 <Estoque>:
+
     BoxLayout:
         orientation: 'vertical'
         padding: 20
         spacing: 10
 
         TextInput:
-            text: 'Escreva...'
+            hint_text: 'Escreva...'
             font_size: 16
             size_hint_y: None
             height: 30
 
         ScrollView:
-            size_hint: (1, 1)
-            do_scroll_y: True
-
             BoxLayout:
+                id: lista_produtos
                 orientation: 'vertical'
-                size_hint_y: 0.1
+                size_hint_y: None
                 height: self.minimum_height
                 spacing: 10
-                cols: 1
-
-                # Aqui você pode adicionar dinamicamente os itens do estoque
-                BoxLayout:
-
-                    Label:
-                        text: 'Nome'
-                        font_size: 20
-
-                    Button:
-                        text: '-'
-                        font_size: 20
-
-                    Label:
-                        text: '0'
-                        font_size:
-
-                    Button:
-                        text: '+'
-                        font_size: 20
-
-                    Button:
-                        text: 'Remover'
-                        font_size: 20
