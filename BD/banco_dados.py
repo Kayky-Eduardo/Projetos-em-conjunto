@@ -5,7 +5,7 @@ cursor = conexao.cursor()
 
 cursor.execute('''
                create table if not exists setor (
-               setor_id integer primary key,
+               setor_id integer primary key autoincrement,
                nome_setor text not null,
                nome_responsavel text not null
                )
@@ -13,7 +13,7 @@ cursor.execute('''
 
 cursor.execute('''
                create table if not exists cargo (
-               cargo_id integer primary key,
+               cargo_id integer primary key autoincrement,
                nome_cargo text not null,
                tipo_contrato text check(tipo_contrato in('pj', 'clt')),
                setor_id integer,
@@ -23,7 +23,7 @@ cursor.execute('''
 
 cursor.execute('''
                create table if not exists funcionario (
-               funcionario_cpf integer primary key,
+               funcionario_cpf text primary key,
                cargo_id integer not null, 
                nome_funcionario text not null,
                salario integer not null,
@@ -56,8 +56,9 @@ cursor.execute('''
 cursor.execute('''
                create table if not exists cliente (
                cliente_cpf text primary key,
-               telefone1 integer not null, 
-               telefone2 integer,
+               nome text,
+               telefone1 text not null, 
+               telefone2 text,
                email text not null
                )
 ''')
@@ -77,7 +78,7 @@ cursor.execute('''
 
 cursor.execute('''
                create table if not exists compra (
-               compra_id integer primary key,
+               compra_id integer primary key autoincrement,
                produto_id,
                qntd_produto integer,
                foreign key(produto_id) references produto(produto_id))
@@ -85,11 +86,11 @@ cursor.execute('''
 
 cursor.execute('''
                create table if not exists venda (
-               venda_id integer primary key,
-               funcionario_id integer,
+               venda_id integer primary key autoincrement,
+               funcionario_cpf text,
                cliente_cpf text,
                compra_id integer,
-               foreign key (funcionario_id) references funcionario(funcionario_id),
+               foreign key (funcionario_cpf) references funcionario(funcionario_cpf),
                foreign key (cliente_cpf) references cliente(cliente_cpf),
                foreign key (compra_id) references compra(compra_id)
                )
@@ -106,7 +107,7 @@ cursor.execute('''
 
 cursor.execute('''
                create table if not exists encomenda (
-               encomenda_id integer auto increment primary key,
+               encomenda_id integer primary key autoincrement,
                cliente_cpf text, 
                produto_id integer,
                qntd_produto integer,
@@ -127,4 +128,4 @@ cursor.execute('''
 conexao.commit()
 conexao.close()
 
-# convertendo todo o direito do codigo para kayky eduardo e davi
+# convertendo todo o direi
