@@ -2,9 +2,10 @@ import sqlite3
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
 from kivy.properties import ObjectProperty
+from kivy.uix.floatlayout import FloatLayout
+from kivy.uix.screenmanager import Screen
 
-
-class Cadastro_Encomenda(GridLayout):
+class Cadastro_Encomenda(Screen, FloatLayout):
     cliente_cpf = ObjectProperty(None)
     produto_id = ObjectProperty(None)
     qntd_produto = ObjectProperty(None)
@@ -35,8 +36,7 @@ class Cadastro_Encomenda(GridLayout):
             self.enviar.text = 'Cadastro realizado com sucesso!'
             
         except sqlite3.Error as e:
-            self.enviar.text = f'Erro: {e}'
-                    
+            self.enviar.text = f'Erro: {e}'              
 
 class Cadastro_EncomendaApp(App):
     def build(self):

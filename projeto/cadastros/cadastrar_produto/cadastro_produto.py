@@ -1,7 +1,16 @@
 import sqlite3
-from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
+from kivy.uix.screenmanager import Screen
 from kivy.properties import ObjectProperty
+from kivy.lang import Builder
+import os
+
+Builder.load_file(os.path.join(os.path.dirname(__file__), 'cadastro_produto.kv'))
+
+class TelaCadastro(Screen):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.add_widget(Cadastro_Produto())
 
 class Cadastro_Produto(GridLayout):
     produto_id = ObjectProperty(None)
@@ -11,9 +20,7 @@ class Cadastro_Produto(GridLayout):
     qntd_produto = ObjectProperty(None)
     validade_produto = ObjectProperty(None)
     enviar = ObjectProperty(None)
-    
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
+
     
     def adicionar_banco(self):
         produto_id_validacao = self.produto_id.text
@@ -54,9 +61,10 @@ class Cadastro_Produto(GridLayout):
 
         except sqlite3.Error as e:
             self.enviar.text = f'Erro: {e}'
-class Cadastro_ProdutoApp(App):
-    def build(self):
-        return Cadastro_Produto()
+                    
+# class Cadastro_ProdutoApp(App):
+#     def build(self):
+#         return Cadastro_Produto()
 
-if __name__ == '__main__':
-    Cadastro_ProdutoApp().run()
+# if __name__ == '__main__':
+#     Cadastro_ProdutoApp().run()

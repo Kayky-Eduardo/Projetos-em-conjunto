@@ -31,7 +31,7 @@
                 size_hint: 0.4, 0.8
                 pos_hint: {'center_x': 0.5, 'center_y': 0.6}
                 font_size: 20
-                on_press: root.manager.current = "Cadastro_Cliente"
+                on_press: root.manager.current = 'telacadastro_cliente'
 
 
             Button:
@@ -39,13 +39,14 @@
                 size_hint: 0.4, 0.8
                 pos_hint: {'center_x': 0.5, 'center_y': 0.5}
                 font_size: 20
+                on_press: root.manager.current = 'telacadastro'
 
             Button:
                 text: 'Cadastro de compra'
                 font_size: 20
                 size_hint: 0.4, 0.8
                 pos_hint: {'center_x': 0.5, 'center_y': 0.4}
-            
+                on_press: root.manager.current = 'cadastro_encomenda'
 
             Button:
                 text: 'Cadastro de funcionário'
