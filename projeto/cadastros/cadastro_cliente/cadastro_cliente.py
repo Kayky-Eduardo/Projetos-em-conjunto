@@ -2,7 +2,19 @@ import sqlite3
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
 from kivy.properties import ObjectProperty
+<<<<<<< Updated upstream
+=======
+from kivy.lang import Builder
+from kivy.uix.screenmanager import Screen
+import os
+>>>>>>> Stashed changes
 
+Builder.load_file(os.path.join(os.path.dirname(__file__), 'cadastro_cliente.kv'))
+
+class TelaCadastro_Cliente(Screen):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.add_widget(Cadastro_Cliente())
 
 class Cadastro_Cliente(GridLayout):
     cliente_cpf = ObjectProperty(None)
@@ -64,9 +76,9 @@ class Cadastro_Cliente(GridLayout):
             self.enviar.text = f'Erro: {e}'
                     
 
-class Cadastro_ClienteApp(App):
-    def build(self):
-        return Cadastro_Cliente()
+# class Cadastro_ClienteApp(App):
+#     def build(self):
+#         return Cadastro_Cliente()
 
-if __name__ == '__main__':
-    Cadastro_ClienteApp().run()
+# if __name__ == '__main__':
+#     Cadastro_ClienteApp().run()
