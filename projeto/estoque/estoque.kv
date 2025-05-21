@@ -1,20 +1,18 @@
-<Estoque>:
+<Tela_Estoque>:
+    orientation: 'vertical'
+    spacing: 10
+    padding: 10
 
-    BoxLayout:
-        orientation: 'vertical'
-        padding: 20
-        spacing: 10
+    Button:
+        text: 'Carregar Produtos com Estoque'
+        size_hint_y: None
+        on_press: root.atualizar_dados()
 
-        TextInput:
-            hint_text: 'Escreva...'
-            font_size: 16
+    ScrollView:
+        GridLayout:
+            id: container
+            cols: 1
             size_hint_y: None
-            height: 30
-
-        ScrollView:
-            BoxLayout:
-                id: lista_produtos
-                orientation: 'vertical'
-                size_hint_y: None
-                height: self.minimum_height
-                spacing: 10
+            height: self.minimum_height
+            row_default_height: '40dp'
+            row_force_default: True

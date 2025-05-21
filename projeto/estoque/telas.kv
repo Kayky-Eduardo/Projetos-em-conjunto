@@ -1,0 +1,108 @@
+ScreenManager:
+    Tela_Estoque:
+    Cadastro_Produto:
+
+<Tela_Estoque>:
+    name: "estoque"
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 10
+        padding: 10
+
+        Button:
+            text: 'Carregar Produtos com Estoque'
+            size_hint_y: None
+            on_press: root.atualizar_dados()
+
+        ScrollView:
+            GridLayout:
+                id: container
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+                row_default_height: '40dp'
+                row_force_default: True
+
+        Button:
+            text: 'Ir para Cadastro de Produto'
+            size_hint_y: None
+            height: "40dp"
+            on_press: app.root.current = "cadastro"
+
+<Cadastro_Produto>:
+    name: "cadastro"
+    produto_id: produto_id
+    nome_produto: nome_produto
+    tipo_produto: tipo_produto
+    preco_produto: preco_produto
+    quantidade: quantidade
+    validade: validade
+    enviar: enviar
+
+    GridLayout:
+        cols: 2
+        
+        Label:
+            text:'Produto ID:'
+            height: '30dp'
+
+        TextInput:
+            id: produto_id
+            multiline: False
+            height: '30dp'
+
+        Label:
+            text:'Digite o nome do produto: '
+            height: '30dp'
+
+        TextInput:
+            id: nome_produto
+            multiline: False
+            height: '30dp'
+
+        Label:
+            text:'tipo do produto: '
+            height: '30dp'
+
+        TextInput:
+            id: tipo_produto
+            multiline: False
+            height: '30dp'
+
+        Label:
+            text: 'Preço produto: '
+            height: '30dp'
+
+        TextInput:
+            id: preco_produto
+            multiline: False
+            height: '30dp'
+        Label:
+            text: 'Quantidade: '
+            height: '30dp'
+
+        TextInput:
+            id: quantidade
+            multiline: False
+            height: '30dp'
+            
+        Label:
+            text: 'Validade: '
+            height: '30dp'
+
+        TextInput:
+            id: validade
+            multiline: False
+            height: '30dp'
+
+        Button:
+            id: enviar
+            text: 'Enviar'
+            font_size: 20
+            size_hint_y: None
+            on_press: root.adicionar_banco()
+
+        Button:
+            text: 'Voltar para Estoque'
+            size_hint_y: None
+            on_press: app.root.current = "estoque"
