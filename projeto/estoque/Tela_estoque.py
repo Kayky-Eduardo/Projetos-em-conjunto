@@ -7,8 +7,9 @@ from kivy.properties import ObjectProperty
 from kivy.lang import Builder
 import sqlite3
 
-# ----- TELA ESTOQUE -----
 class Tela_Estoque(Screen):
+    procurar = ObjectProperty(None)
+
     def buscar_dados(self):
         conexao = sqlite3.connect('BD/projeto.db')
         cursor = conexao.cursor()
@@ -33,7 +34,6 @@ class Tela_Estoque(Screen):
             texto = f"Produto: {nome} | Categoria: {tipo} | Preço: R${preco:.2f} | Quantidade: {qntd} | Validade: {validade}"
             container.add_widget(Label(text=texto))
 
-# ----- TELA CADASTRO -----
 class Cadastro_Produto(Screen):
     produto_id = ObjectProperty(None)
     nome_produto = ObjectProperty(None)
@@ -42,6 +42,7 @@ class Cadastro_Produto(Screen):
     quantidade = ObjectProperty(None)
     validade = ObjectProperty(None)
     enviar = ObjectProperty(None)
+
     def adicionar_banco(self):
         
         try:
@@ -66,10 +67,9 @@ class Cadastro_Produto(Screen):
         except sqlite3.Error as e:
             self.enviar.text = f'Erro: {e}'
 
-# ----- SCREEN MANAGER APP -----
-class Gerenciador(App):
+class Gerenciador_Telas(App):
     def build(self):
-        return Builder.load_file("telas.kv")
+        return Builder.load_file("tela_estoque.kv")
 
 if __name__ == '__main__':
-    Gerenciador().run()
+    Gerenciador_Telas().run()
