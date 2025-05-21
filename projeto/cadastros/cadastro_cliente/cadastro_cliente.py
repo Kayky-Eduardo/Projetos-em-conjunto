@@ -3,12 +3,9 @@ from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.screenmanager import Screen
 from kivy.properties import ObjectProperty
-<<<<<<< Updated upstream
-=======
 from kivy.lang import Builder
 from kivy.uix.screenmanager import Screen
 import os
->>>>>>> Stashed changes
 
 Builder.load_file(os.path.join(os.path.dirname(__file__), 'cadastro_cliente.kv'))
 
