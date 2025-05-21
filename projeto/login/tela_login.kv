@@ -35,7 +35,7 @@
 
                 TextInput:
                     id: senha
-                    hint_text: "Senha"
+                    hint_text: "senha"
                     multiline: False
                     password: not root.senha_visivel
                     height: 30
@@ -48,8 +48,9 @@
 
             Button:
                 id: enviar
-                text: "Enviar"
+                text: "enviar"
                 font_size: 18
                 size_hint_y: None
                 height: 40
                 on_press: root.verificar()
+                background_color: 0.5, 0.5, 0.7, 1
