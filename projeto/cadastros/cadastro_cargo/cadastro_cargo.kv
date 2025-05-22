@@ -1,36 +1,41 @@
-<Cadastro_Cargo>
+<Cadastro_Cargo>:
+    name: "cadastro"
     cargo_id: cargo_id
     nome_cargo: nome_cargo
     setor_id: setor_id
     enviar: enviar
     cols: 1
 
+
     GridLayout:
         cols: 2
         
         Label:
-            text:'ID do cargo:'
+            text:'Cargo ID: '
+            height: '30dp'
 
         TextInput:
             id: cargo_id
-            hint_text: 'Digite o id '
             multiline: False
+            height: '30dp'
 
         Label:
-            text:'Digite o nome do cargo: '
-        
+            text:'Nome do cargo: '
+            height: '30dp'
+
         TextInput:
             id: nome_cargo
             multiline: False
-            hint_text: 'Digite o nome do cargo'
+            height: '30dp'
 
         Label:
-            text:'O ID do setor: '
+            text:'ID do setor: '
+            height: '30dp'
 
         TextInput:
             id: setor_id
             multiline: False
-            hint_text: 'Digite o id do setor'   
+            height: '30dp'
 
         Label:
             text: 'CLT'
@@ -46,9 +51,15 @@
             on_active: root.set_tipo_contrato('pj', self.active)
             group: 'tipo_contrato'
 
-    Button:
-        id: enviar
-        text: 'Enviar'
-        font_size: 20
-        on_press: root.adicionar_banco()
-        background_color: 0.9, 1.20, 1.39, 7
+        Button:
+            id: enviar
+            text: 'Enviar'
+            font_size: 20
+            size_hint_y: None
+            on_press: root.adicionar_banco()
+            background_color: 0.9, 1.20, 1.39, 7
+
+        Button:
+            text: 'Voltar para cargos'
+            size_hint_y: None
+            on_press: root.managercurrent = "telacadastro_funcionario"

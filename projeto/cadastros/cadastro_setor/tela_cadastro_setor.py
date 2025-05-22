@@ -1,14 +1,15 @@
 from kivy.app import App
-from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.uix.screenmanager import Screen
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
 from kivy.properties import ObjectProperty
 from kivy.lang import Builder
-
 import sqlite3
+import os
 
-Builder.load_file("tela_cadastro_setor.kv")
+Builder.load_file(os.path.join(os.path.dirname(__file__), 'tela_cadastro_setor.kv'))
+
 class Tela_Cadastro_Setor(Screen):
     def __init__(self, **kw):
         super().__init__(**kw)
@@ -30,10 +31,3 @@ class Tela_Cadastro_Setor(Screen):
         for setor_id, nome_setor, responsavel_setor in self.buscar_dados():
             texto = f"ID: {setor_id} | Nome setor: {nome_setor} | Responsável: {responsavel_setor}"
             container.add_widget(Label(text=texto))
-
-class Gerenciador_Telas(App):
-    def build(self):
-        return Tela_Cadastro_Setor()
-
-if __name__ == '__main__':
-    Gerenciador_Telas().run()

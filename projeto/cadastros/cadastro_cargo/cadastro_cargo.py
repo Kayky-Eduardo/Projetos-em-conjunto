@@ -1,22 +1,24 @@
 import sqlite3
 from kivy.app import App
+from kivy.uix.screenmanager import Screen
 from kivy.uix.gridlayout import GridLayout
 from kivy.properties import ObjectProperty
+from kivy.lang import Builder
+import os
 
+Builder.load_file(os.path.join(os.path.dirname(__file__), 'cadastro_cargo.kv'))
 
-class Cadastro_Cargo(GridLayout):
+class Cadastro_Cargo(Screen):
     cargo_id = ObjectProperty(None)
     nome_cargo = ObjectProperty(None)
     setor_id = ObjectProperty(None)
     enviar = ObjectProperty(None)
         
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-        self.tipo_contrato = None
+    tipo_contrato = None
 
     def set_tipo_contrato(self, tipo, ativo):
         if ativo:
-            self.tipo_contrato = tipo
+            tipo_contrato = tipo
             
     def adicionar_banco(self):
         cargo_id_validacao = self.cargo_id.text
@@ -37,11 +39,3 @@ class Cadastro_Cargo(GridLayout):
             
         except sqlite3.Error as e:
             self.enviar.text = f'Erro: {e}'
-                    
-
-class Cadastro_CargoApp(App):
-    def build(self):
-        return Cadastro_Cargo()
-
-if __name__ == '__main__':
-    Cadastro_CargoApp().run()

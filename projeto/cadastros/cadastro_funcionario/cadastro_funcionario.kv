@@ -1,4 +1,4 @@
-<Cadastro_Usuario>
+<Cadastro_Funcionario>
     cols: 1
     cpf: cpf
     cargo_id: cargo_id
@@ -79,9 +79,15 @@
             multiline: False
             hint_text: 'aaaa-mm-dd'
 
-    Button:
-        id: enviar
-        text: 'Enviar'
-        font_size: 20
-        on_press: root.adicionar_banco()
-        background_color: 0.5, 0.5, 0.7, 1
+        Button:
+            id: enviar
+            text: 'Enviar'
+            font_size: 20
+            on_press: root.adicionar_banco()
+            background_color: 0.5, 0.5, 0.7, 1
+        
+        Button:
+            text: 'Voltar'
+            font_size: 20
+            on_press: root.manager.current= 'telacadastro_funcionario'
+            background_color: 0.5, 0.5, 0.7, 1

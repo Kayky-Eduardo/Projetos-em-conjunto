@@ -25,4 +25,10 @@
             text: 'Ir para cadastro de funcionário'
             size_hint_y: None
             height: "40dp"
-            on_press: app.root.current = "cadastro"
+            on_press: root.manager.current = "cadastro_funcionario"
+
+        Button:
+            text: 'Voltar'
+            size_hint_y: None
+            height: "40dp"
+            on_press: root.manager.current = "Menu_cadastros"

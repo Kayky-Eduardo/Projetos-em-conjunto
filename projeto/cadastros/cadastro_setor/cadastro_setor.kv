@@ -32,8 +32,13 @@
             hint_text: 'Digite o nome do responsavel'
             multiline: False
 
-    Button:
-        id: enviar
-        text: 'Enviar'
-        font_size: 20
-        on_press: root.adicionar_banco()
+        Button:
+            id: enviar
+            text: 'Enviar'
+            font_size: 20
+            on_press: root.adicionar_banco()
+        
+        Button:
+            text: 'Voltar'
+            font_size: 20
+            on_press: root.manager.current = "Menu_cadastros"

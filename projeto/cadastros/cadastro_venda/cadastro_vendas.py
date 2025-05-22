@@ -1,10 +1,14 @@
-import sqlite3
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
 from kivy.properties import ObjectProperty
+from kivy.uix.screenmanager import Screen
+from kivy.lang import Builder
+import sqlite3
+import os
 
+Builder.load_file(os.path.join(os.path.dirname(__file__), 'cadastro_venda.kv'))
 
-class Cadastro_Venda(GridLayout):
+class Cadastro_Venda(Screen):
     venda_id = ObjectProperty(None)
     funcionario_id = ObjectProperty(None)
     cliente_cpf = ObjectProperty(None)

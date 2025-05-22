@@ -2,8 +2,13 @@ import sqlite3
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
 from kivy.properties import ObjectProperty
+from kivy.uix.screenmanager import Screen
+from kivy.lang import Builder
+import os
 
-class Cadastro_Usuario(GridLayout):
+Builder.load_file(os.path.join(os.path.dirname(__file__), 'cadastro_funcionario.kv'))
+
+class Cadastro_Funcionario(Screen):
     cpf = ObjectProperty(None)
     cargo_id = ObjectProperty(None)
     nome = ObjectProperty(None)
@@ -13,9 +18,6 @@ class Cadastro_Usuario(GridLayout):
     fim_contrato = ObjectProperty(None)
     confirmar_senha = ObjectProperty(None)
     enviar = ObjectProperty(None)
-
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
 
     def adicionar_banco(self):
         nome_validacao = self.nome.text
@@ -43,10 +45,3 @@ class Cadastro_Usuario(GridLayout):
                 self.enviar.text = "A senha não é a mesma"
         except sqlite3.Error as e:
             self.enviar.text = f'Erro: {e}'
-            
-class CadastroApp(App):
-    def build(self):
-        return Cadastro_Usuario()
-
-if __name__ == '__main__':
-    CadastroApp().run()
