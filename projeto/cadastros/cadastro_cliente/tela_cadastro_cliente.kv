@@ -1,0 +1,28 @@
+<Tela_Cadastro_Cliente>:
+    name: "estoque"
+    
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 10
+        padding: 10
+
+        Button:
+            text: 'Carregar Clientes'
+            size_hint_y: None
+            on_press: root.atualizar_dados()
+            height: '40dp'
+
+        ScrollView:
+            GridLayout:
+                id: container
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+                row_default_height: '40dp'
+                row_force_default: True
+
+        Button:
+            text: 'Ir para Cadastro Clientes'
+            size_hint_y: None
+            height: "40dp"
+            on_press: root.manager.current = "cadastro_cliente"

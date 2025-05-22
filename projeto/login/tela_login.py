@@ -12,7 +12,6 @@ class ImageButton(ButtonBehavior, Image):
 
 # Carrega o arquivo KV
 class Tela_Login(Screen, FloatLayout):
-    Builder.load_file(os.path.join('login', 'tela_login.kv'))
     cpf = ObjectProperty(None)
     senha = ObjectProperty(None)
     enviar = ObjectProperty(None)
@@ -36,3 +35,5 @@ class Tela_Login(Screen, FloatLayout):
 
     def alternar_visibilidade(self):
         self.senha_visivel = not self.senha_visivel
+
+Builder.load_file(os.path.join('login', 'tela_login.kv'))

@@ -1,22 +1,19 @@
 import sqlite3
 from kivy.app import App
-from kivy.uix.gridlayout import GridLayout
 from kivy.uix.screenmanager import Screen
 from kivy.properties import ObjectProperty
 from kivy.lang import Builder
 import os
 
+Builder.load_file(os.path.join(os.path.dirname(__file__), 'cadastro_cliente.kv'))
 
-class Cadastro_Cliente(GridLayout):
+class Cadastro_Cliente(Screen):
     cliente_cpf = ObjectProperty(None)
     tel1 = ObjectProperty(None)
     tel2 = ObjectProperty(None)
     email = ObjectProperty(None)
     enviar = ObjectProperty(None)
-        
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-        
+     
     def validar_cpf(self, cpf):
         cpf = ''.join(filter(str.isdigit, cpf))
 
@@ -65,11 +62,3 @@ class Cadastro_Cliente(GridLayout):
             
         except sqlite3.Error as e:
             self.enviar.text = f'Erro: {e}'
-                    
-
-class Cadastro_ClienteApp(App):
-    def build(self):
-        return Cadastro_Cliente()
-
-if __name__ == '__main__':
-    Cadastro_ClienteApp().run()

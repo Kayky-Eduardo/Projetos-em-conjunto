@@ -43,7 +43,6 @@ cursor.execute('''
                )
 ''')
 
-
 cursor.execute('''
                create table if not exists estoque (
                produto_id integer primary key,
@@ -51,7 +50,6 @@ cursor.execute('''
                validade date,
                foreign key (produto_id) references produto(produto_id))
                ''')
-
 
 cursor.execute('''
                create table if not exists cliente (
@@ -62,7 +60,6 @@ cursor.execute('''
                email text not null
                )
 ''')
-
 
 cursor.execute('''
                create table if not exists enderecos (

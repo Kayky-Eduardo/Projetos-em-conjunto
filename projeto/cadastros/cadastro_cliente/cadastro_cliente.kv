@@ -1,45 +1,54 @@
-<Cadastro_Cliente>
+<Cadastro_Cliente>:
+    name: "cadastro"
     cliente_cpf: cliente_cpf
-    tel1: tel1
-    tel2: tel2
+    tel1: tel_
+    tel2: tel__
     email: email
     enviar: enviar
     cols: 1
+
 
     GridLayout:
         cols: 2
         
         Label:
             text:'CPF:'
+            height: '30dp'
 
         TextInput:
             id: cliente_cpf
             multiline: False
-            
+            height: '30dp'
+
         Label:
-            text:'Digite o telefone: '
-        
+            text:'Telefone: '
+            height: '30dp'
+
         TextInput:
-            id: tel1
+            id: tel_
             multiline: False
+            height: '30dp'
 
         Label:
-            text:'Digite o 2° telefone: '
+            text:'Telefone 2: '
+            height: '30dp'
 
         TextInput:
-            id: tel2
-            multiline: False 
+            id: tel__
+            multiline: False
+            height: '30dp'
 
         Label:
-            text:'Email: '
+            text: 'Email: '
+            height: '30dp'
 
         TextInput:
             id: email
             multiline: False
+            height: '30dp'
 
     Button:
         id: enviar
         text: 'Enviar'
         font_size: 20
         on_press: root.adicionar_banco()
-        background_color: 0.5, 0.5, 0.7, 1
