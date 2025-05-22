@@ -1,0 +1,45 @@
+<Cadastro_Produto>
+    produto_id: produto_id
+    nome_produto: nome_produto
+    tipo_produto: tipo_produto
+    preco_produto: preco_produto
+    enviar: enviar
+    cols: 1
+
+    GridLayout:
+        cols: 2
+        
+        Label:
+            text:'Produto ID:'
+
+        TextInput:
+            id: produto_id
+            multiline: False
+
+        Label:
+            text:'Digite o nome do produto: '
+        
+        TextInput:
+            id: nome_produto
+            multiline: False
+
+        Label:
+            text:'tipo do produto: '
+
+        TextInput:
+            id: tipo_produto
+            multiline: False
+
+        Label:
+            text: 'Preço produto: '
+
+        TextInput:
+            id: preco_produto
+            multiline: False
+
+    Button:
+        id: enviar
+        text: 'Enviar'
+        font_size: 20
+        on_press: root.adicionar_banco()
+        background_color: 0.5, 0.5, 0.7, 1

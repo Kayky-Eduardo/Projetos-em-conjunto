@@ -21,21 +21,24 @@
                 font_size: 50
 
             Button:
-                text: 'Cadastrar'
+                text: 'cadastrar'
                 size_hint: 0.3, 0.2
                 pos_hint: {'center_x': 0.5, 'center_y': 0.6}
                 font_size: 20
                 on_press: root.manager.current= 'Menu_cadastros'
+                background_color: 0.5, 0.5, 0.7, 1
 
             Button:
-                text: 'Relatório'
+                text: 'relatório'
                 size_hint: 0.3, 0.2
                 pos_hint: {'center_x': 0.5, 'center_y': 0.5}
                 font_size: 20
+                background_color: 0.5, 0.5, 0.7, 1
 
             Button:
                 font_size: 20
-                text: 'Sair'
+                text: 'sair'
                 size_hint: 0.3, 0.2
                 pos_hint: {'center_x': 0.5, 'center_y': 0.4}
                 on_press: app.stop() # app fecha
+                background_color: 0.5, 0.5, 0.7, 1
