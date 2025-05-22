@@ -31,8 +31,10 @@
                 size_hint: 0.4, 0.8
                 pos_hint: {'center_x': 0.5, 'center_y': 0.6}
                 font_size: 20
+                background_color: 0.5, 0.5, 0.7, 1
                 on_press: root.manager.current = "telacadastro_cliente"
 
+>>>>>>> 3f418af5c79a6ccc405a1d2e5a7c48d08e9a66c3
 
             Button:
                 text: 'cadastro de venda'
@@ -77,9 +79,17 @@
                 pos_hint: {'center_x': 0.5, 'center_y': 0.4}
                 background_color: 0.5, 0.5, 0.7, 1
 
+
+            Button:
+                text: 'cadastro de cliente'
+                font_size: 20
+                size_hint: 0.4, 0.8
+                pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+                background_color: 0.5, 0.5, 0.7, 1
+            
             Button:
                 text: 'voltar'
                 font_size: 20
                 size_hint: 0.4, 0.8
                 pos_hint: {'center_x': 0.5, 'center_y': 0.4}
-                background_color: 0.5, 0.5, 0.7, 1
+                on_press: root.manager.current = 'menu'
