@@ -5,7 +5,6 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
 from kivy.properties import ObjectProperty
 from kivy.lang import Builder
-from .cadastro_cliente import Cadastro_Cliente
 import sqlite3
 import os
 
