@@ -8,6 +8,7 @@ ScreenManager:
 <Tela_Cadastro_Cliente>:
 >>>>>>> Stashed changes:projeto/cadastros/cadastro_cliente/tela_cadastro_cliente.kv
     name: "estoque"
+    
     BoxLayout:
         orientation: 'vertical'
         spacing: 10
@@ -17,6 +18,7 @@ ScreenManager:
             text: 'Carregar Produtos com Estoque'
             size_hint_y: None
             on_press: root.atualizar_dados()
+            height: '40dp'
 
         ScrollView:
             GridLayout:
