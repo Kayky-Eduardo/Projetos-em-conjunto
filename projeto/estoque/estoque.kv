@@ -1,27 +1,18 @@
-<Cadastro_Encomenda>:
+<Cadastro_Produto>:
     name: "cadastro"
-    cliente_cpf: cliente_cpf
     produto_id: produto_id
-    qntd_produto: qntd_produto
-    data_pedido: data_pedido
-    data_entrega: data_entrega
+    nome_produto: nome_produto
+    tipo_produto: tipo_produto
+    preco_produto: preco_produto
+    quantidade: quantidade
+    validade: validade
     enviar: enviar
-    cols: 1
 
     GridLayout:
         cols: 2
         
         Label:
-            text:'CPF do cliente:'
-            height: '30dp'
-
-        TextInput:
-            id: cliente_cpf
-            multiline: False
-            height: '30dp'
-
-        Label:
-            text:'Produto ID: '
+            text:'Produto ID:'
             height: '30dp'
 
         TextInput:
@@ -30,33 +21,48 @@
             height: '30dp'
 
         Label:
-            text:'Quantidade: '
+            text:'Digite o nome do produto: '
             height: '30dp'
 
         TextInput:
-            id: qntd_produto
+            id: nome_produto
+            multiline: False
+            height: '30dp'
+
+        Label:
+            text:'tipo do produto: '
+            height: '30dp'
+
+        TextInput:
+            id: tipo_produto
+            multiline: False
+            height: '30dp'
+
+        Label:
+            text: 'Preço produto: '
+            height: '30dp'
+
+        TextInput:
+            id: preco_produto
+            multiline: False
+            height: '30dp'
+        Label:
+            text: 'Quantidade: '
+            height: '30dp'
+
+        TextInput:
+            id: quantidade
             multiline: False
             height: '30dp'
             
         Label:
-            text: 'Data pedido: '
+            text: 'Validade: '
             height: '30dp'
 
         TextInput:
-            id: data_pedido
+            id: validade
             multiline: False
             height: '30dp'
-            hint_text: 'yyyy-mm-aa'
-
-        Label:
-            text: 'Data entrega: '
-            height: '30dp'
-
-        TextInput:
-            id: data_entrega
-            multiline: False
-            height: '30dp'
-            hint_text: 'yyyy-mm-aa'
 
         Button:
             id: enviar
@@ -66,6 +72,6 @@
             on_press: root.adicionar_banco()
 
         Button:
-            text: 'Voltar para Encomenda'
+            text: 'Voltar para Estoque'
             size_hint_y: None
-            on_press: root.manager.current = "telacadastro_encomenda"
+            on_press: root.manager.current = "telaestoque"
