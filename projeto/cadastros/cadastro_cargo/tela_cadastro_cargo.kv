@@ -1,0 +1,97 @@
+ScreenManager:
+    Tela_Cadastro_Cargo:
+    Cadastro_Cargo:
+
+<Tela_Cadastro_Cargo>:
+    name: "estoque"
+    
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 10
+        padding: 10
+
+        Button:
+            text: 'Carregar cargos'
+            size_hint_y: None
+            on_press: root.atualizar_dados()
+            height: '40dp'
+
+        ScrollView:
+            GridLayout:
+                id: container
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+                row_default_height: '40dp'
+                row_force_default: True
+
+        Button:
+            text: 'Ir para cadastro de cargo'
+            size_hint_y: None
+            height: "40dp"
+            on_press: app.root.current = "cadastro"
+
+<Cadastro_Cargo>:
+    name: "cadastro"
+    cargo_id: cargo_id
+    nome_cargo: nome_cargo
+    setor_id: setor_id
+    enviar: enviar
+    cols: 1
+
+
+    GridLayout:
+        cols: 2
+        
+        Label:
+            text:'Cargo ID: '
+            height: '30dp'
+
+        TextInput:
+            id: cargo_id
+            multiline: False
+            height: '30dp'
+
+        Label:
+            text:'Nome do cargo: '
+            height: '30dp'
+
+        TextInput:
+            id: nome_cargo
+            multiline: False
+            height: '30dp'
+
+        Label:
+            text:'ID do setor: '
+            height: '30dp'
+
+        TextInput:
+            id: setor_id
+            multiline: False
+            height: '30dp'
+
+        Label:
+            text: 'CLT'
+
+        CheckBox:
+            on_active: root.set_tipo_contrato('clt', self.active)
+            group: 'tipo_contrato'
+
+        Label:
+            text: 'PJ'
+
+        CheckBox:
+            on_active: root.set_tipo_contrato('pj', self.active)
+            group: 'tipo_contrato'
+
+        Button:
+            id: enviar
+            text: 'Enviar'
+            font_size: 20
+            size_hint_y: None
+            on_press: root.adicionar_banco()
+
+        Button:
+            text: 'Voltar para cargos'
+            size_hint_y: None
+            on_press: app.root.current = "estoque"
