@@ -47,14 +47,8 @@
             multiline: False
             height: '30dp'
 
-        Button:
-            id: enviar
-            text: 'Enviar'
-            font_size: 20
-            size_hint_y: None
-            on_press: root.adicionar_banco()
-
-        Button:
-            text: 'Voltar para Clientes'
-            size_hint_y: None
-            on_press: root.manager.current='telacadastro_cliente'
+    Button:
+        id: enviar
+        text: 'Enviar'
+        font_size: 20
+        on_press: root.adicionar_banco()
