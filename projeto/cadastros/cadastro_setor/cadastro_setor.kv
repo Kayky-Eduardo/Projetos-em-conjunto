@@ -1,20 +1,11 @@
 <Cadastro_Setor>
     cols: 1
-    setor_id: setor_id
     nome_setor: nome_setor
     nome_responsavel: nome_responsavel
     enviar: enviar
     
     GridLayout:
         cols: 2
-        
-        Label:
-            text:'ID do setor:'
-
-        TextInput:
-            id: setor_id
-            hint_text: 'Digite o id '
-            multiline: False
 
         Label:
             text:'Digite o nome do setor: '
@@ -41,4 +32,4 @@
         Button:
             text: 'Voltar'
             font_size: 20
-            on_press: root.manager.current = "Menu_cadastros"
+            on_press: root.manager.current = "telacadastro_setor"

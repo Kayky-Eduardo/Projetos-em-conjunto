@@ -9,7 +9,6 @@ import os
 Builder.load_file(os.path.join(os.path.dirname(__file__), 'cadastro_venda.kv'))
 
 class Cadastro_Venda(Screen):
-    venda_id = ObjectProperty(None)
     funcionario_id = ObjectProperty(None)
     cliente_cpf = ObjectProperty(None)
     compra_id = ObjectProperty(None)
@@ -20,7 +19,6 @@ class Cadastro_Venda(Screen):
         self.tipo_contrato = None
        
     def adicionar_banco(self):
-        venda_id_validacao = self.venda_id.text
         funcionario_id_validacao = self.funcionario_id.text
         cliente_cpf_validacao = self.cliente_cpf.text
         compra_id_validacao = self.compra_id.text
@@ -29,9 +27,9 @@ class Cadastro_Venda(Screen):
             conexao = sqlite3.connect('BD/projeto.db')
             cursor = conexao.cursor()
             cursor.execute('''
-                INSERT INTO venda (venda_id, funcionario_id, cliente_cpf, compra_id)
-                VALUES (?, ?, ?, ?)
-            ''', (venda_id_validacao, funcionario_id_validacao, cliente_cpf_validacao, compra_id_validacao))
+                INSERT INTO venda (funcionario_id, cliente_cpf, compra_id)
+                VALUES (?, ?, ?)
+            ''', (funcionario_id_validacao, cliente_cpf_validacao, compra_id_validacao))
             conexao.commit()
             conexao.close()
             self.enviar.text = 'Cadastro realizado com sucesso!'

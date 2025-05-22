@@ -9,7 +9,6 @@ import os
 Builder.load_file(os.path.join(os.path.dirname(__file__), 'cadastro_setor.kv'))
 
 class Cadastro_Setor(Screen):
-    setor_id = ObjectProperty(None)
     nome_setor = ObjectProperty(None)
     nome_responsavel = ObjectProperty(None)
     enviar = ObjectProperty(None)
@@ -18,7 +17,6 @@ class Cadastro_Setor(Screen):
         super().__init__(**kwargs)
 
     def adicionar_banco(self):
-        setor_id_validacao = self.setor_id.text
         nome_setor_validacao = self.nome_setor.text
         nome_responsavel_validacao = self.nome_responsavel.text
 
@@ -26,9 +24,9 @@ class Cadastro_Setor(Screen):
             conexao = sqlite3.connect("BD/projeto.db")
             cursor = conexao.cursor()
             cursor.execute('''
-            INSERT INTO setor (setor_id, nome_setor, nome_responsavel)
-            VALUES (?, ?, ?)
-        ''', (setor_id_validacao, nome_setor_validacao, nome_responsavel_validacao))
+            INSERT INTO setor (nome_setor, nome_responsavel)
+            VALUES (?, ?)
+        ''', (nome_setor_validacao, nome_responsavel_validacao))
             conexao.commit()
             conexao.close()
             self.enviar.text = "Cadastro realizado"
