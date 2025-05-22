@@ -1,7 +1,3 @@
-ScreenManager:
-    Tela_Cadastro_Cliente:
-    Cadastro_Cliente:
-
 <Tela_Cadastro_Cliente>:
     name: "estoque"
     
@@ -29,65 +25,4 @@ ScreenManager:
             text: 'Ir para Cadastro Clientes'
             size_hint_y: None
             height: "40dp"
-            on_press: app.root.current = "cadastro"
-
-<Cadastro_Cliente>:
-    name: "cadastro"
-    cliente_cpf: cliente_cpf
-    tel1: tel_
-    tel2: tel__
-    email: email
-    enviar: enviar
-    cols: 1
-
-
-    GridLayout:
-        cols: 2
-        
-        Label:
-            text:'CPF:'
-            height: '30dp'
-
-        TextInput:
-            id: cliente_cpf
-            multiline: False
-            height: '30dp'
-
-        Label:
-            text:'Telefone: '
-            height: '30dp'
-
-        TextInput:
-            id: tel_
-            multiline: False
-            height: '30dp'
-
-        Label:
-            text:'Telefone 2: '
-            height: '30dp'
-
-        TextInput:
-            id: tel__
-            multiline: False
-            height: '30dp'
-
-        Label:
-            text: 'Email: '
-            height: '30dp'
-
-        TextInput:
-            id: email
-            multiline: False
-            height: '30dp'
-
-        Button:
-            id: enviar
-            text: 'Enviar'
-            font_size: 20
-            size_hint_y: None
-            on_press: root.adicionar_banco()
-
-        Button:
-            text: 'Voltar para Clientes'
-            size_hint_y: None
-            on_press: app.root.current = "estoque"
+            on_press: root.manager.current = "cadastro_cliente"

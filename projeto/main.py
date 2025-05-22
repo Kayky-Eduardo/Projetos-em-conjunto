@@ -19,7 +19,6 @@ class MainApp(App):
         sm.add_widget(Menu_Cadastro(name='Menu_cadastros'))
         sm.add_widget(Tela_Cadastro_Cliente(name='telacadastro_cliente'))
         sm.add_widget(Cadastro_Cliente(name='cadastro_cliente'))
-
         return sm
     
 if __name__ == '__main__':
