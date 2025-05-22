@@ -1,8 +1,12 @@
+<<<<<<< Updated upstream:projeto/estoque/telas.kv
 ScreenManager:
     Tela_Estoque:
     Cadastro_Produto:
 
 <Tela_Estoque>:
+=======
+<Tela_Cadastro_Cliente>:
+>>>>>>> Stashed changes:projeto/cadastros/cadastro_cliente/tela_cadastro_cliente.kv
     name: "estoque"
     BoxLayout:
         orientation: 'vertical'
@@ -27,6 +31,7 @@ ScreenManager:
             text: 'Ir para Cadastro de Produto'
             size_hint_y: None
             height: "40dp"
+<<<<<<< Updated upstream:projeto/estoque/telas.kv
             on_press: app.root.current = "cadastro"
 
 <Cadastro_Produto>:
@@ -94,15 +99,21 @@ ScreenManager:
             id: validade
             multiline: False
             height: '30dp'
+=======
+            on_press: root.manager.current = 'cadastro_cliente'
+>>>>>>> Stashed changes:projeto/cadastros/cadastro_cliente/tela_cadastro_cliente.kv
 
         Button:
-            id: enviar
-            text: 'Enviar'
-            font_size: 20
+            text: 'Voltar'
             size_hint_y: None
+<<<<<<< Updated upstream:projeto/estoque/telas.kv
             on_press: root.adicionar_banco()
 
         Button:
             text: 'Voltar para Estoque'
             size_hint_y: None
             on_press: app.root.current = "estoque"
+=======
+            height: "50dp"
+            on_press: root.manager.current = 'Menu_cadastros'
+>>>>>>> Stashed changes:projeto/cadastros/cadastro_cliente/tela_cadastro_cliente.kv
