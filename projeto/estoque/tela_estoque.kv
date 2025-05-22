@@ -1,16 +1,14 @@
-<Tela_Cadastro_encomenda>:
+<Tela_Estoque>:
     name: "estoque"
-    
     BoxLayout:
         orientation: 'vertical'
         spacing: 10
         padding: 10
 
         Button:
-            text: 'Carregar encomendas'
+            text: 'Carregar Produtos com Estoque'
             size_hint_y: None
             on_press: root.atualizar_dados()
-            height: '40dp'
 
         ScrollView:
             GridLayout:
@@ -22,13 +20,13 @@
                 row_force_default: True
 
         Button:
-            text: 'Ir para Cadastro de encomenda'
+            text: 'Ir para Cadastro de Produto'
             size_hint_y: None
             height: "40dp"
-            on_press: root.manager.current = "cadastro_encomenda"
+            on_press: root.manager.current = "cadastro_produto"
         
         Button:
             text: 'Voltar'
             size_hint_y: None
             height: "40dp"
-            on_press: root.manager.current = "Menu_cadastros"
+            on_press: root.manager.current = "menu"

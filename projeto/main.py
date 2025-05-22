@@ -17,8 +17,10 @@ from cadastros.cadastro_cargo.cadastro_cargo import Cadastro_Cargo
 from cadastros.cadastro_cargo.tela_cadastro_cargo import Tela_Cadastro_Cargo
 from cadastros.cadastro_setor.cadastro_setor import Cadastro_Setor
 from cadastros.cadastro_setor.tela_cadastro_setor import Tela_Cadastro_Setor
-
-
+from cadastros.encomenda.cadastro_encomenda import Cadastro_Encomenda
+from cadastros.encomenda.tela_cadastro_encomenda import Tela_Cadastro_encomenda
+from estoque.estoque import Cadastro_Produto
+from estoque.tela_estoque import Tela_Estoque
 
 # Builder.load_file(os.path.join(os.path.dirname(__file__), 'cadastro_cliente.kv'))
 
@@ -42,13 +44,19 @@ class MainApp(App):
         sm.add_widget(Cadastro_Cargo(name='cadastro_cargo'))
         sm.add_widget(Tela_Cadastro_Setor(name='telacadastro_setor'))
         sm.add_widget(Cadastro_Setor(name='cadastro_setor'))
+        sm.add_widget(Tela_Cadastro_encomenda(name='telacadastro_encomenda'))
+        sm.add_widget(Cadastro_Encomenda(name='cadastro_encomenda'))
+        sm.add_widget(Tela_Estoque(name='telaestoque'))
+        sm.add_widget(Cadastro_Produto(name='cadastro_produto'))
         return sm
     
 if __name__ == '__main__':
     MainApp().run()
 
-        # Button:
-        #     text: 'Voltar'
-        #     size_hint_y: None
-        #     height: "40dp"
-        #     on_press: root.manager.current = "Menu_cadastros"
+'''
+Button:
+    text: 'Voltar'
+    size_hint_y: None
+    height: "40dp"
+    on_press: root.manager.current = "Menu_cadastros"
+'''
