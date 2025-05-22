@@ -1,37 +1,51 @@
-<Cadastro_Compra>
+<Cadastro_Compra>:
+    name: "cadastro"
     compra_id: compra_id
     produto_id: produto_id
     qntd_produto: qntd_produto
     enviar: enviar
     cols: 1
 
+    cols: 1
+
     GridLayout:
         cols: 2
         
         Label:
-            text:'Compra ID(temporário):'
+            text:'ID da compra:'
+            height: '30dp'
 
         TextInput:
             id: compra_id
             multiline: False
+            height: '30dp'
 
         Label:
-            text:'Digite o id do produto: '
-        
+            text:'Produto ID: '
+            height: '30dp'
+
         TextInput:
             id: produto_id
             multiline: False
+            height: '30dp'
 
         Label:
-            text:'Quantidade do produto: '
+            text:'Quantidade: '
+            height: '30dp'
 
         TextInput:
             id: qntd_produto
             multiline: False
-            hint_text: 'Ex: 1 2 3'
+            height: '30dp'
 
-    Button:
-        id: enviar
-        text: 'Enviar'
-        font_size: 20
-        on_press: root.adicionar_banco()
+        Button:
+            id: enviar
+            text: 'Enviar'
+            font_size: 20
+            size_hint_y: None
+            on_press: root.adicionar_banco()
+
+        Button:
+            text: 'Voltar para Compras'
+            size_hint_y: None
+            on_press: root.manager.current = "telacadastro_compra"

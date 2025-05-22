@@ -1,10 +1,14 @@
 import sqlite3
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
+from kivy.uix.screenmanager import Screen
 from kivy.properties import ObjectProperty
+from kivy.lang import Builder
+import os
 
+Builder.load_file(os.path.join(os.path.dirname(__file__), 'cadastro_setor.kv'))
 
-class Cadastro_Setor(GridLayout):
+class Cadastro_Setor(Screen):
     setor_id = ObjectProperty(None)
     nome_setor = ObjectProperty(None)
     nome_responsavel = ObjectProperty(None)
@@ -31,10 +35,3 @@ class Cadastro_Setor(GridLayout):
             
         except sqlite3.Error:
             self.enviar.text = "Erro: Verifique os dados e cheque se já não está cadastrado"
-
-class Cadastro_setorApp(App):
-    def build(self):
-        return Cadastro_Setor()
-
-if __name__ == '__main__':
-    Cadastro_setorApp().run()

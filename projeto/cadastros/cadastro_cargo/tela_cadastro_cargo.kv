@@ -1,7 +1,3 @@
-ScreenManager:
-    Tela_Cadastro_Cargo:
-    Cadastro_Cargo:
-
 <Tela_Cadastro_Cargo>:
     name: "estoque"
     
@@ -29,69 +25,9 @@ ScreenManager:
             text: 'Ir para cadastro de cargo'
             size_hint_y: None
             height: "40dp"
-            on_press: app.root.current = "cadastro"
-
-<Cadastro_Cargo>:
-    name: "cadastro"
-    cargo_id: cargo_id
-    nome_cargo: nome_cargo
-    setor_id: setor_id
-    enviar: enviar
-    cols: 1
-
-
-    GridLayout:
-        cols: 2
-        
-        Label:
-            text:'Cargo ID: '
-            height: '30dp'
-
-        TextInput:
-            id: cargo_id
-            multiline: False
-            height: '30dp'
-
-        Label:
-            text:'Nome do cargo: '
-            height: '30dp'
-
-        TextInput:
-            id: nome_cargo
-            multiline: False
-            height: '30dp'
-
-        Label:
-            text:'ID do setor: '
-            height: '30dp'
-
-        TextInput:
-            id: setor_id
-            multiline: False
-            height: '30dp'
-
-        Label:
-            text: 'CLT'
-
-        CheckBox:
-            on_active: root.set_tipo_contrato('clt', self.active)
-            group: 'tipo_contrato'
-
-        Label:
-            text: 'PJ'
-
-        CheckBox:
-            on_active: root.set_tipo_contrato('pj', self.active)
-            group: 'tipo_contrato'
-
+            on_press: root.manager.current = "cadastro_funcionario"
         Button:
-            id: enviar
-            text: 'Enviar'
-            font_size: 20
+            text: 'Voltar'
             size_hint_y: None
-            on_press: root.adicionar_banco()
-
-        Button:
-            text: 'Voltar para cargos'
-            size_hint_y: None
-            on_press: app.root.current = "estoque"
+            height: "40dp"
+            on_press: root.manager.current = "Menu_cadastros"
