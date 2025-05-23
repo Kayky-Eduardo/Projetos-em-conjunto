@@ -1,14 +1,16 @@
 🔻 MVP DO SISTEMA VAREJISTA (VERSÃO EXECUTÁVEL) 🔻
 1. Funcionalidade principal: Venda presencial
- Cadastro de produtos - Feito✅
+Cadastro de produtos - Feito✅
 
- Cadastro de funcionários (com login) - Feito✅
+Cadastro de funcionários (com login) - Feito✅
 
- Registro de vendas com funcionário vinculado - Feito✅
+Registro de vendas com funcionário vinculado - Feito✅
 
- Formas de pagamento (dinheiro, crédito, débito) -
+Formas de pagamento (dinheiro, crédito, débito) -
 
- Validação de ID do produto e atualização de estoque ao vender ⚠️(essencial)
+Atualização de estoque ao vender ⚠️(essencial)
+
+Validação se existe ao cadastrar ⚠️(essencial)
 
 2. Painel gerencial básico (acesso via login de gerente)
 Relatório de vendas do dia 
