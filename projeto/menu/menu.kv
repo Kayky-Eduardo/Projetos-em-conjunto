@@ -39,6 +39,15 @@
                 font_name: "fonte/fontebotao"
 
             Button:
+                text: 'ESTOQUE'
+                size_hint: 0.3, 0.3
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                font_size: 20
+                background_color: 0.5, 0.5, 0.5, 8
+                font_name: "fonte/fontebotao"
+                on_press: root.manager.current = 'telaestoque'
+
+            Button:
                 font_size: 20
                 text: 'SAIR'
                 size_hint: 0.3, 0.3
