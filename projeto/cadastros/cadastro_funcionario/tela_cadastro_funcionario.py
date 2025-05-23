@@ -1,9 +1,8 @@
 from kivy.app import App
 from kivy.uix.screenmanager import Screen
-from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.gridlayout import GridLayout
+from kivy.uix.button import Button
 from kivy.uix.label import Label
-from kivy.properties import ObjectProperty
+
 from kivy.lang import Builder
 import sqlite3
 import os
@@ -30,3 +29,14 @@ class Tela_Cadastro_Funcionario(Screen):
         for funcionario_cpf, cargo_id, nome_funcionario, salario, data_admissao, fim_contrato, senha in self.buscar_dados():
             texto = f"Funcionario CPF: {funcionario_cpf} | Cargo: {cargo_id} | Nome: {nome_funcionario} | Salário: {salario}\nData Admissão: {data_admissao} | Fim do Contrato {fim_contrato}"
             container.add_widget(Label(text=texto))
+            butao = Button(text='Deletar')
+            butao.bind(on_press=lambda instance, cpf=funcionario_cpf: self.remover_funcionario(cpf))
+            container.add_widget(butao)
+    
+    def remover_funcionario(self, cpf):
+        conexao = sqlite3.connect('BD/projeto.db')
+        cursor = conexao.cursor()
+        cursor.execute("DELETE FROM funcionario WHERE funcionario_cpf = ?", (cpf,))
+        conexao.commit()
+        conexao.close()
+        self.atualizar_dados()
