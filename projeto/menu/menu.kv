@@ -11,21 +11,21 @@
         BoxLayout:
             orientation: 'vertical'
             size_hint: None, None
-            size: 700, 500
+            size: 800, 400
             pos_hint:  {'center_x': 0.5, 'center_y': 0.5}
-            spacing: 0
+            spacing: 5
 
             Label:
                 text:'M E N U'
                 pos_hint: {'center_x': 0.5, 'center_y': 0.75}
                 font_size: 150
                 font_name: "fonte/fontetitulo"
-            
+           
             Button:
                 text: 'CADASTRAR'
                 size_hint: 0.3, 0.3
                 pos_hint: {'center_x': 0.5, 'center_y': 0.6}
-                font_size: 30
+                font_size: 20
                 on_press: root.manager.current= 'Menu_cadastros'
                 background_color: 0.5, 0.5, 0.5, 8
                 font_name: "fonte/fontebotao"
@@ -34,21 +34,12 @@
                 text: 'RELATORIO'
                 size_hint: 0.3, 0.3
                 pos_hint: {'center_x': 0.5, 'center_y': 0.5}
-                font_size: 30
+                font_size: 20
                 background_color: 0.5, 0.5, 0.5, 8
                 font_name: "fonte/fontebotao"
-            
-            Button:
-                text: 'ESTOQUE'
-                size_hint: 0.3, 0.3
-                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
-                font_size: 30
-                background_color: 0.5, 0.5, 0.5, 8
-                font_name: "fonte/fontebotao"
-                on_press: root.manager.current = 'telaestoque'
 
             Button:
-                font_size: 30
+                font_size: 20
                 text: 'SAIR'
                 size_hint: 0.3, 0.3
                 pos_hint: {'center_x': 0.5, 'center_y': 0.4}
