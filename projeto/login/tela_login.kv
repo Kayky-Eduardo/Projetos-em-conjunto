@@ -4,6 +4,8 @@
     enviar: enviar
 
     FloatLayout:
+    
+
         Image:
             source: 'projeto/img/fundo.png'
             allow_stretch: True
@@ -15,23 +17,25 @@
             orientation: 'vertical'
             spacing: 5
             size_hint: None, None
-            height: self.minimum_height
             pos_hint: {"center_x": 0.5, "center_y": 0.5}
-            width: 400 
+            width: 400
 
             Label:
                 text:'L O G I N'
-                pos_hint: {'center_x': 0.5, 'center_y': 0.9}
-                font_size: 150
+                pos_hint: {'center_x': 0.5, 'center_y': 0.10}
+                font_size: 125
                 font_name: "fonte/fontetitulo"
-            
+                size_hint_y: None
+                height: 100
+           
             TextInput:
                 id: cpf
                 hint_text: "CPF"
                 multiline: False
                 size_hint_y: None
                 height: 30
-                pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+                pos_hint: {'center_x': 0.5, 'center_y': 0.9}
+                font_name: "fonte/fontebotao"
 
             BoxLayout:
                 orientation: 'horizontal'
@@ -41,11 +45,12 @@
 
                 TextInput:
                     id: senha
-                    hint_text: "senha"
+                    hint_text: "SENHA"
                     multiline: False
                     password: not root.senha_visivel
-                    height: 30
-                    pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+                    height: 50
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    font_name: "fonte/fontebotao"
 
                 ImageButton:
                     source: 'projeto/img/aberto.png' if root.senha_visivel else 'projeto/img/fechado.png'
@@ -55,10 +60,11 @@
 
             Button:
                 id: enviar
-                text: "enviar"
+                text: "ENVIAR"
                 font_size: 18
-                size_hint_y: None
-                height: 40
+                size_hint: None, None
+                size: 400, 40
                 on_press: root.verificar()
-                background_color: 0.5, 0.5, 0.7, 1
-                pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+                background_color: 0.5, 0.5, 0.5, 1
+                pos_hint: {'center_x': 0.5, 'center_y': 0.8}
+                font_name: "fonte/fontebotao"
