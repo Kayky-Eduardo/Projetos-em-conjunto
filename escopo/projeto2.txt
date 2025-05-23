@@ -12,6 +12,8 @@ Atualização de estoque ao vender ⚠️(essencial)
 
 Validação se existe ao cadastrar ⚠️(essencial)
 
+ Validação de id ao gerar uma compra ⚠️(essencial)
+
 2. Painel gerencial básico (acesso via login de gerente)
 Relatório de vendas do dia 
 
