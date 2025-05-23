@@ -18,8 +18,8 @@ class Cadastro_Compra(Screen):
         self.tipo_contrato = None
        
     def adicionar_banco(self):
-        produto_id_validacao = self.produto_id.text
-        qntd_produto_validacao = self.qntd_produto.text
+        produto_id_validacao = int(self.produto_id.text)
+        qntd_produto_validacao = int(self.qntd_produto.text)
         
         try:
             conexao = sqlite3.connect('BD/projeto.db')
