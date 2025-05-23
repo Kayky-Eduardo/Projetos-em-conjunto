@@ -30,6 +30,8 @@ class Cadastro_Compra(Screen):
     def adicionar_banco(self):
         produto_id_validacao = int(self.produto_id.text)
         qntd_produto_validacao = int(self.qntd_produto.text)
+        quantidade = self.buscar_dados()
+        estoque = int(quantidade[0][0])
         
         try:
             if int(estoque) >= int(qntd_produto_validacao):
