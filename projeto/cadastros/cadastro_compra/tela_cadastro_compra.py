@@ -19,7 +19,6 @@ class Tela_Cadastro_Compra(Screen):
         cursor.execute("""
             SELECT * FROM compra
         """)
-
         dados = cursor.fetchall()
         conexao.close()
         return dados
