@@ -18,14 +18,20 @@
             height: self.minimum_height
             pos_hint: {"center_x": 0.5, "center_y": 0.5}
             width: 400 
-     
+
+            Label:
+                text:'L O G I N'
+                pos_hint: {'center_x': 0.5, 'center_y': 0.9}
+                font_size: 150
+                font_name: "fonte/fontetitulo"
+            
             TextInput:
                 id: cpf
                 hint_text: "CPF"
                 multiline: False
                 size_hint_y: None
                 height: 30
-        
+                pos_hint: {'center_x': 0.5, 'center_y': 0.4}
 
             BoxLayout:
                 orientation: 'horizontal'
@@ -39,6 +45,7 @@
                     multiline: False
                     password: not root.senha_visivel
                     height: 30
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.3}
 
                 ImageButton:
                     source: 'projeto/img/aberto.png' if root.senha_visivel else 'projeto/img/fechado.png'
@@ -54,3 +61,4 @@
                 height: 40
                 on_press: root.verificar()
                 background_color: 0.5, 0.5, 0.7, 1
+                pos_hint: {'center_x': 0.5, 'center_y': 0.2}

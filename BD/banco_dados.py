@@ -124,5 +124,3 @@ cursor.execute('''
 
 conexao.commit()
 conexao.close()
-
-# convertendo todo o direito de volta pra jessica

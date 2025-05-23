@@ -40,6 +40,7 @@
                 pos_hint: {'center_x': 0.5, 'center_y': 0.5}
                 font_size: 20
                 background_color: 0.5, 0.5, 0.7, 1
+                on_press: root.manager.current = "telacadastro_venda"
 
             Button:
                 text: 'cadastro de compra'
@@ -47,6 +48,7 @@
                 size_hint: 0.4, 0.8
                 pos_hint: {'center_x': 0.5, 'center_y': 0.4}
                 background_color: 0.5, 0.5, 0.7, 1
+                on_press: root.manager.current = "telacadastro_compra"
 
             Button:
                 text: 'cadastro de funcionário'
@@ -54,6 +56,7 @@
                 size_hint: 0.4, 0.8
                 pos_hint: {'center_x': 0.5, 'center_y': 0.4}
                 background_color: 0.5, 0.5, 0.7, 1
+                on_press: root.manager.current = "telacadastro_funcionario"
 
             Button:
                 text: 'cadastro de setor'
@@ -61,6 +64,7 @@
                 size_hint: 0.4, 0.8
                 pos_hint: {'center_x': 0.5, 'center_y': 0.4}
                 background_color: 0.5, 0.5, 0.7, 1
+                on_press: root.manager.current = "telacadastro_setor"
 
             Button:
                 text: 'cadastro de cargo'
@@ -68,14 +72,15 @@
                 size_hint: 0.4, 0.8
                 pos_hint: {'center_x': 0.5, 'center_y': 0.4}
                 background_color: 0.5, 0.5, 0.7, 1
-
-
+                on_press: root.manager.current = "telacadastro_cargo"
+            
             Button:
-                text: 'cadastro de compra'
+                text: 'cadastro de encomenda'
                 font_size: 20
                 size_hint: 0.4, 0.8
                 pos_hint: {'center_x': 0.5, 'center_y': 0.4}
                 background_color: 0.5, 0.5, 0.7, 1
+                on_press: root.manager.current = "telacadastro_encomenda"
             
             Button:
                 text: 'voltar'

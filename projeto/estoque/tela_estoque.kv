@@ -1,14 +1,5 @@
-<<<<<<< Updated upstream:projeto/estoque/telas.kv
-ScreenManager:
-    Tela_Estoque:
-    Cadastro_Produto:
-
 <Tela_Estoque>:
-=======
-<Tela_Cadastro_Cliente>:
->>>>>>> Stashed changes:projeto/cadastros/cadastro_cliente/tela_cadastro_cliente.kv
     name: "estoque"
-    
     BoxLayout:
         orientation: 'vertical'
         spacing: 10
@@ -18,7 +9,6 @@ ScreenManager:
             text: 'Carregar Produtos com Estoque'
             size_hint_y: None
             on_press: root.atualizar_dados()
-            height: '40dp'
 
         ScrollView:
             GridLayout:
@@ -33,89 +23,10 @@ ScreenManager:
             text: 'Ir para Cadastro de Produto'
             size_hint_y: None
             height: "40dp"
-<<<<<<< Updated upstream:projeto/estoque/telas.kv
-            on_press: app.root.current = "cadastro"
-
-<Cadastro_Produto>:
-    name: "cadastro"
-    produto_id: produto_id
-    nome_produto: nome_produto
-    tipo_produto: tipo_produto
-    preco_produto: preco_produto
-    quantidade: quantidade
-    validade: validade
-    enviar: enviar
-
-    GridLayout:
-        cols: 2
+            on_press: root.manager.current = "cadastro_produto"
         
-        Label:
-            text:'Produto ID:'
-            height: '30dp'
-
-        TextInput:
-            id: produto_id
-            multiline: False
-            height: '30dp'
-
-        Label:
-            text:'Digite o nome do produto: '
-            height: '30dp'
-
-        TextInput:
-            id: nome_produto
-            multiline: False
-            height: '30dp'
-
-        Label:
-            text:'tipo do produto: '
-            height: '30dp'
-
-        TextInput:
-            id: tipo_produto
-            multiline: False
-            height: '30dp'
-
-        Label:
-            text: 'Preço produto: '
-            height: '30dp'
-
-        TextInput:
-            id: preco_produto
-            multiline: False
-            height: '30dp'
-        Label:
-            text: 'Quantidade: '
-            height: '30dp'
-
-        TextInput:
-            id: quantidade
-            multiline: False
-            height: '30dp'
-            
-        Label:
-            text: 'Validade: '
-            height: '30dp'
-
-        TextInput:
-            id: validade
-            multiline: False
-            height: '30dp'
-=======
-            on_press: root.manager.current = 'cadastro_cliente'
->>>>>>> Stashed changes:projeto/cadastros/cadastro_cliente/tela_cadastro_cliente.kv
-
         Button:
             text: 'Voltar'
             size_hint_y: None
-<<<<<<< Updated upstream:projeto/estoque/telas.kv
-            on_press: root.adicionar_banco()
-
-        Button:
-            text: 'Voltar para Estoque'
-            size_hint_y: None
-            on_press: app.root.current = "estoque"
-=======
-            height: "50dp"
-            on_press: root.manager.current = 'Menu_cadastros'
->>>>>>> Stashed changes:projeto/cadastros/cadastro_cliente/tela_cadastro_cliente.kv
+            height: "40dp"
+            on_press: root.manager.current = "menu"

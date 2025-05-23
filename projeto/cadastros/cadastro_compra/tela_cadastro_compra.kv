@@ -1,7 +1,3 @@
-ScreenManager:
-    Tela_Cadastro_Compra:
-    Cadastro_Compra:
-
 <Tela_Cadastro_Compra>:
     name: "estoque"
     
@@ -29,56 +25,10 @@ ScreenManager:
             text: 'Ir para cadastro de compras'
             size_hint_y: None
             height: "40dp"
-            on_press: app.root.current = "cadastro"
-
-<Cadastro_Compra>:
-    name: "cadastro"
-    compra_id: compra_id
-    produto_id: produto_id
-    qntd_produto: qntd_produto
-    enviar: enviar
-    cols: 1
-
-    cols: 1
-
-    GridLayout:
-        cols: 2
+            on_press: root.manager.current = "cadastro_compra"
         
-        Label:
-            text:'ID da compra:'
-            height: '30dp'
-
-        TextInput:
-            id: compra_id
-            multiline: False
-            height: '30dp'
-
-        Label:
-            text:'Produto ID: '
-            height: '30dp'
-
-        TextInput:
-            id: produto_id
-            multiline: False
-            height: '30dp'
-
-        Label:
-            text:'Quantidade: '
-            height: '30dp'
-
-        TextInput:
-            id: qntd_produto
-            multiline: False
-            height: '30dp'
-
         Button:
-            id: enviar
-            text: 'Enviar'
-            font_size: 20
+            text: 'Voltar'
             size_hint_y: None
-            on_press: root.adicionar_banco()
-
-        Button:
-            text: 'Voltar para Estoque'
-            size_hint_y: None
-            on_press: app.root.current = "estoque"
+            height: "40dp"
+            on_press: root.manager.current = "Menu_cadastros" 

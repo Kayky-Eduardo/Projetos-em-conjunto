@@ -1,7 +1,3 @@
-ScreenManager:
-    Tela_Cadastro_encomenda:
-    Cadastro_Encomenda:
-
 <Tela_Cadastro_encomenda>:
     name: "estoque"
     
@@ -29,76 +25,10 @@ ScreenManager:
             text: 'Ir para Cadastro de encomenda'
             size_hint_y: None
             height: "40dp"
-            on_press: app.root.current = "cadastro"
-
-<Cadastro_Encomenda>:
-    name: "cadastro"
-    cliente_cpf: cliente_cpf
-    produto_id: produto_id
-    qntd_produto: qntd_produto
-    data_pedido: data_pedido
-    data_entrega: data_entrega
-    enviar: enviar
-    cols: 1
-
-    GridLayout:
-        cols: 2
+            on_press: root.manager.current = "cadastro_encomenda"
         
-        Label:
-            text:'CPF do cliente:'
-            height: '30dp'
-
-        TextInput:
-            id: cliente_cpf
-            multiline: False
-            height: '30dp'
-
-        Label:
-            text:'Produto ID: '
-            height: '30dp'
-
-        TextInput:
-            id: produto_id
-            multiline: False
-            height: '30dp'
-
-        Label:
-            text:'Quantidade: '
-            height: '30dp'
-
-        TextInput:
-            id: qntd_produto
-            multiline: False
-            height: '30dp'
-            
-        Label:
-            text: 'Data pedido: '
-            height: '30dp'
-
-        TextInput:
-            id: data_pedido
-            multiline: False
-            height: '30dp'
-            hint_text: 'yyyy-mm-aa'
-
-        Label:
-            text: 'Data entrega: '
-            height: '30dp'
-
-        TextInput:
-            id: data_entrega
-            multiline: False
-            height: '30dp'
-            hint_text: 'yyyy-mm-aa'
-
         Button:
-            id: enviar
-            text: 'Enviar'
-            font_size: 20
+            text: 'Voltar'
             size_hint_y: None
-            on_press: root.adicionar_banco()
-
-        Button:
-            text: 'Voltar para Estoque'
-            size_hint_y: None
-            on_press: app.root.current = "estoque"
+            height: "40dp"
+            on_press: root.manager.current = "Menu_cadastros"

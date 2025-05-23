@@ -1,7 +1,3 @@
-ScreenManager:
-    Tela_Cadastro_Venda:
-    Cadastro_Venda:
-
 <Tela_Cadastro_Venda>:
     name: "estoque"
     
@@ -29,56 +25,11 @@ ScreenManager:
             text: 'Ir para cadastro de vendas'
             size_hint_y: None
             height: "40dp"
-            on_press: app.root.current = "cadastro"
-
-<Cadastro_Venda>:
-    name: "cadastro"
-    venda_id: venda_id
-    funcionario_id: funcionario_id
-    cliente_cpf: cliente_cpf
-    compra_id: compra_id
-    enviar: enviar
-    cols: 1
-
-    GridLayout:
-        cols: 2
-
-        Label:
-            text:'Venda ID(temporário): '
-
-        TextInput:
-            id: venda_id
-            multiline: False
-
-        Label:
-            text:'Digite o id do funcionário: '
+            on_press: app.root.current = "cadastro_venda"
         
-        TextInput:
-            id: funcionario_id
-            multiline: False
-
-        Label:
-            text:'Digite o CPF do cliente: '
-
-        TextInput:
-            id: cliente_cpf
-            multiline: False
-
-        Label:
-            text: 'Digite o ID da compra:  '
-
-        TextInput:
-            id: compra_id
-            multiline: False
-
         Button:
-            id: enviar
-            text: 'Enviar'
-            font_size: 20
+            text: 'Voltar'
             size_hint_y: None
-            on_press: root.adicionar_banco()
+            height: "40dp"
+            on_press: app.root.current = "Menu_cadastros"
 
-        Button:
-            text: 'Voltar para Estoque'
-            size_hint_y: None
-            on_press: app.root.current = "estoque"

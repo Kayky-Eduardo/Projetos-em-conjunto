@@ -1,5 +1,5 @@
-<Cadastro_Venda>
-    venda_id: venda_id
+<Cadastro_Venda>:
+    name: "cadastro"
     funcionario_id: funcionario_id
     cliente_cpf: cliente_cpf
     compra_id: compra_id
@@ -8,13 +8,6 @@
 
     GridLayout:
         cols: 2
-        
-        Label:
-            text:'Venda ID(temporário): '
-
-        TextInput:
-            id: venda_id
-            multiline: False
 
         Label:
             text:'Digite o id do funcionário: '
@@ -37,8 +30,14 @@
             id: compra_id
             multiline: False
 
-    Button:
-        id: enviar
-        text: 'Enviar'
-        font_size: 20
-        on_press: root.adicionar_banco()
+        Button:
+            id: enviar
+            text: 'Enviar'
+            font_size: 20
+            size_hint_y: None
+            on_press: root.adicionar_banco()
+
+        Button:
+            text: 'Voltar para Vendas'
+            size_hint_y: None
+            on_press: app.root.current = "telacadastro_venda" 
