@@ -1,6 +1,5 @@
 <Cadastro_Cargo>:
     name: "cadastro"
-    cargo_id: cargo_id
     nome_cargo: nome_cargo
     setor_id: setor_id
     enviar: enviar
@@ -10,15 +9,6 @@
     GridLayout:
         cols: 2
         
-        Label:
-            text:'Cargo ID: '
-            height: '30dp'
-
-        TextInput:
-            id: cargo_id
-            multiline: False
-            height: '30dp'
-
         Label:
             text:'Nome do cargo: '
             height: '30dp'
@@ -62,4 +52,4 @@
         Button:
             text: 'Voltar para cargos'
             size_hint_y: None
-            on_press: root.managercurrent = "telacadastro_funcionario"
+            on_press: root.manager.current = "telacadastro_cargo"
