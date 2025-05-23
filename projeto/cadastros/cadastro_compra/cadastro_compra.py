@@ -17,20 +17,40 @@ class Cadastro_Compra(Screen):
         super().__init__(**kwargs)
         self.tipo_contrato = None
        
+    def buscar_dados(self):
+        conexao = sqlite3.connect('BD/projeto.db')
+        cursor = conexao.cursor()
+        cursor.execute("""
+            SELECT qntd_produto FROM estoque
+        """)
+        dados = cursor.fetchall()
+        conexao.close()
+        return dados
+
     def adicionar_banco(self):
         produto_id_validacao = self.produto_id.text
         qntd_produto_validacao = self.qntd_produto.text
-        
+        quantidade = self.buscar_dados()
+        estoque = int(quantidade[0][0])
         try:
-            conexao = sqlite3.connect('BD/projeto.db')
-            cursor = conexao.cursor()
-            cursor.execute('''
-                INSERT INTO compra (produto_id, qntd_produto)
-                VALUES (?, ?)
-            ''', (produto_id_validacao, qntd_produto_validacao,))
-            conexao.commit()
-            conexao.close()
-            self.enviar.text = 'Cadastro realizado com sucesso!'
-            
+            if int(estoque) >= int(qntd_produto_validacao):
+                conexao = sqlite3.connect('BD/projeto.db')
+                cursor = conexao.cursor()
+                cursor.execute('''
+                    INSERT INTO compra (produto_id, qntd_produto)
+                    VALUES (?, ?)
+                ''', (produto_id_validacao, qntd_produto_validacao,))
+                
+                cursor.execute('''
+                UPDATE estoque 
+                SET qntd_produto = qntd_produto - ? 
+                WHERE produto_id = ?
+                ''', (qntd_produto_validacao, produto_id_validacao))
+                conexao.commit()
+                conexao.close()
+                self.enviar.text = 'Cadastro realizado com sucesso!'
+            else:
+                self.enviar.text = 'Quantidade insuficiente no estoque'
+
         except sqlite3.Error as e:
             self.enviar.text = f'Erro: {e}'
