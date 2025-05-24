@@ -19,9 +19,17 @@ class Cadastro_Setor(Screen):
     def adicionar_banco(self):
         nome_setor_validacao = self.nome_setor.text
         nome_responsavel_validacao = self.nome_responsavel.text
-
+        
+        if not nome_setor_validacao:
+            self.enviar.text = 'Preencha o campo de setor.'
+            return
+        
+        elif not nome_responsavel_validacao:
+            self.enviar.text = 'Preencha o campo de nome do responsável.'
+            return
+        
         try:
-            conexao = sqlite3.connect("BD/projeto.db")
+            conexao = sqlite3.connect('BD/projeto.db')
             cursor = conexao.cursor()
             cursor.execute('''
             INSERT INTO setor (nome_setor, nome_responsavel)
@@ -29,7 +37,7 @@ class Cadastro_Setor(Screen):
         ''', (nome_setor_validacao, nome_responsavel_validacao))
             conexao.commit()
             conexao.close()
-            self.enviar.text = "Cadastro realizado"
+            self.enviar.text = 'Cadastro realizado'
             
         except sqlite3.Error:
-            self.enviar.text = "Erro: Verifique os dados e cheque se já não está cadastrado"
+            self.enviar.text = 'Erro: Verifique os dados e cheque se já não está cadastrado'

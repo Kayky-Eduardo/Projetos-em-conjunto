@@ -17,7 +17,6 @@ class Tela_Cadastro_Venda(Screen):
         cursor.execute("""
             SELECT * FROM venda
         """)
-
         dados = cursor.fetchall()
         conexao.close()
         return dados
@@ -26,7 +25,7 @@ class Tela_Cadastro_Venda(Screen):
         container = self.ids.container
         container.clear_widgets()
         for venda_id, funcionario_id, cliente_cpf, compra_id in self.buscar_dados():
-            texto = f"ID: {venda_id} | ID do funcionário: {funcionario_id} | CPF do cliente: {cliente_cpf} | ID da compra: {compra_id}"
+            texto = f"ID: {venda_id} | CPF do funcionário: {funcionario_id} | CPF do cliente: {cliente_cpf} | ID da compra: {compra_id}"
             container.add_widget(Label(text=texto))
 
 # class Gerenciador_Telas(App):
