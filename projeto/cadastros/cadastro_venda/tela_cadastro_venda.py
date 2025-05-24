@@ -2,6 +2,7 @@ from kivy.app import App
 from kivy.uix.label import Label
 from kivy.uix.screenmanager import Screen
 from kivy.lang import Builder
+from kivy.uix.button import Button
 import sqlite3
 import os
 
@@ -17,7 +18,6 @@ class Tela_Cadastro_Venda(Screen):
         cursor.execute("""
             SELECT * FROM venda
         """)
-
         dados = cursor.fetchall()
         conexao.close()
         return dados
@@ -26,8 +26,19 @@ class Tela_Cadastro_Venda(Screen):
         container = self.ids.container
         container.clear_widgets()
         for venda_id, funcionario_id, cliente_cpf, compra_id in self.buscar_dados():
-            texto = f"ID: {venda_id} | ID do funcionário: {funcionario_id} | CPF do cliente: {cliente_cpf} | ID da compra: {compra_id}"
+            texto = f"ID: {venda_id} | CPF do funcionário: {funcionario_id} | CPF do cliente: {cliente_cpf} | ID da compra: {compra_id}"
             container.add_widget(Label(text=texto))
+            butao = Button(text='Deletar')
+            butao.bind(on_press=lambda instance, id=venda_id: self.remover_venda(id))
+            container.add_widget(butao)
+    
+    def remover_venda(self, id):
+        conexao = sqlite3.connect('BD/projeto.db')
+        cursor = conexao.cursor()
+        cursor.execute("DELETE FROM venda WHERE venda_id = ?", (id,))
+        conexao.commit()
+        conexao.close()
+        self.atualizar_dados()
 
 # class Gerenciador_Telas(App):
 #     def build(self):

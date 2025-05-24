@@ -19,6 +19,19 @@ class Cadastro_Funcionario(Screen):
     confirmar_senha = ObjectProperty(None)
     enviar = ObjectProperty(None)
 
+    def validar_cpf(self, cpf):
+        cpf = ''.join(filter(str.isdigit, cpf))
+
+        if len(cpf) != 11 or cpf == cpf[0] * 11:
+            return False
+
+        for i in [9, 10]:
+            soma = sum(int(cpf[j]) * ((i + 1) - j) for j in range(i))
+            digito = (soma * 10 % 11) % 10
+            if digito != int(cpf[i]):
+                return False
+        return True
+    
     def adicionar_banco(self):
         nome_validacao = self.nome.text
         cpf_validacao = self.cpf.text
@@ -28,6 +41,10 @@ class Cadastro_Funcionario(Screen):
         cargo_id_validacao = self.cargo_id.text
         data_admissao_validacao = self.data_admissao.text
         fim_contrato_validacao = self.fim_contrato.text
+        
+        if not self.validar_cpf(cpf_validacao):
+            self.enviar.text = 'CPF inválido!'
+            return
         
         try:
             if senha_validacao == confirmar_senha_validacao:

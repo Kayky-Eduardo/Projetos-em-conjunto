@@ -44,11 +44,7 @@ class Cadastro_Cliente(Screen):
         if not self.validar_telefone(tel1_validacao):
             self.enviar.text = 'Telefone 1 inválido!'
             return
-        
-        if tel2_validacao and not self.validar_telefone(tel2_validacao):
-            self.enviar.text = 'Telefone 2 inválido!'
-            return
-        
+             
         try:
             conexao = sqlite3.connect('BD/projeto.db')
             cursor = conexao.cursor()

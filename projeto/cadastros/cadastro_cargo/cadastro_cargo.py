@@ -20,9 +20,21 @@ class Cadastro_Cargo(Screen):
             self.tipo_contrato = tipo
             
     def adicionar_banco(self):
+        if not self.setor_id.text.isdigit():
+            self.enviar.text = 'Preencha o campo de setor id corretamente.'
+            return
+        
         nome_cargo_validacao = self.nome_cargo.text
         tipo_contrato_validacao = self.tipo_contrato
         setor_id_validacao = self.setor_id.text
+        
+        if not nome_cargo_validacao:
+            self.enviar.text = 'Preencha o campo nome do cargo.'
+            return
+        
+        elif not tipo_contrato_validacao:
+            self.enviar.text = 'Escolha uma das opções(CNPJ ou CLT).'
+            return
         
         try:
             conexao = sqlite3.connect('BD/projeto.db')
