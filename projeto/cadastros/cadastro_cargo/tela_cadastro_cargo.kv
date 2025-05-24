@@ -1,34 +1,49 @@
 <Tela_Cadastro_Cargo>:
     name: "estoque"
-    
-    BoxLayout:
-        orientation: 'vertical'
-        spacing: 10
-        padding: 10
 
-        Button:
-            text: 'Carregar cargos'
-            size_hint_y: None
-            on_press: root.atualizar_dados()
-            height: '40dp'
+    FloatLayout:
+        Image:
+            source: 'projeto/img/fundo.png'
+            allow_stretch: True
+            keep_ratio: False
+            size_hint: 1, 1
+            pos_hint: {'x': 0, 'y': 0}
 
-        ScrollView:
-            GridLayout:
-                id: container
-                cols: 1
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 10
+            padding: 10
+            size: 100, 90
+
+            Button:
+                text: 'CARREGAR CARGOS'
                 size_hint_y: None
-                height: self.minimum_height
-                row_default_height: '40dp'
-                row_force_default: True
+                on_press: root.atualizar_dados()
+                height: '40dp'
+                background_color: 0.5, 0.5, 0.5, 1
+                font_name: "fonte/fontebotao"
 
-        Button:
-            text: 'Ir para cadastro de cargo'
-            size_hint_y: None
-            height: "40dp"
-            on_press: root.manager.current = "cadastro_cargo"
-            
-        Button:
-            text: 'Voltar'
-            size_hint_y: None
-            height: "40dp"
-            on_press: root.manager.current = "Menu_cadastros"
+            ScrollView:
+                GridLayout:
+                    id: container
+                    cols: 1
+                    size_hint_y: None
+                    height: self.minimum_height
+                    row_default_height: '40dp'
+                    row_force_default: True
+
+            Button:
+                text: 'CADASTRAR CARGO'
+                size_hint_y: None
+                height: "40dp"
+                on_press: root.manager.current = "cadastro_cargo"
+                background_color: 0.5, 0.5, 0.5, 1
+                font_name: "fonte/fontebotao"
+                
+            Button:
+                text: 'VOLTAR'
+                size_hint_y: None
+                height: "40dp"
+                on_press: root.manager.current = "Menu_cadastros"
+                background_color: 0.5, 0.5, 0.5, 1
+                font_name: "fonte/fontebotao"

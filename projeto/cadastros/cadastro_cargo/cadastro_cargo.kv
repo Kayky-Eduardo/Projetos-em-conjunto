@@ -5,7 +5,6 @@
     enviar: enviar
     cols: 1
 
-
     GridLayout:
         cols: 2
         
@@ -43,13 +42,18 @@
 
         Button:
             id: enviar
-            text: 'Enviar'
-            font_size: 20
+            text: 'ENVIAR'
+            font_size: 30
             size_hint_y: None
             on_press: root.adicionar_banco()
             background_color: 0.9, 1.20, 1.39, 7
+            background_color: 0.5, 0.5, 0.5, 1
+            font_name: "fonte/fontebotao"
 
         Button:
-            text: 'Voltar para cargos'
+            text: 'VOLTAR'
             size_hint_y: None
             on_press: root.manager.current = "telacadastro_cargo"
+            background_color: 0.5, 0.5, 0.5, 1
+            font_size: 30
+            font_name: "fonte/fontebotao"

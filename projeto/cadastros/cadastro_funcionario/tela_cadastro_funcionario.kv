@@ -6,9 +6,11 @@
         padding: 10
 
         Button:
-            text: 'Carregar funcionários'
+            text: 'CARREGAR FUNCIONÁRIOS'
             size_hint_y: None
             on_press: root.atualizar_dados()
+            background_color: 0.5, 0.5, 0.5, 1
+            font_name: "fonte/fontebotao"
             
             height: '40dp'
 
@@ -22,13 +24,17 @@
                 row_force_default: True
                 cols: 1 
         Button:
-            text: 'Ir para cadastro de funcionário'
+            text: 'CADASTRAR FUNCIONÁRIO'
             size_hint_y: None
             height: "40dp"
             on_press: root.manager.current = "cadastro_funcionario"
+            background_color: 0.5, 0.5, 0.5, 1
+            font_name: "fonte/fontebotao"
 
         Button:
-            text: 'Voltar'
+            text: 'VOLTAR'
             size_hint_y: None
             height: "40dp"
             on_press: root.manager.current = "Menu_cadastros"
+            background_color: 0.5, 0.5, 0.5, 1
+            font_name: "fonte/fontebotao"
