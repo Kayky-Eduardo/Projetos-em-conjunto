@@ -4,6 +4,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
 from kivy.lang import Builder
+from kivy.uix.button import Button
 import sqlite3
 import os
 
@@ -29,3 +30,14 @@ class Tela_Cadastro_Compra(Screen):
         for compra_id, produto_id, qntd_produto in self.buscar_dados():
             texto = f"ID: {compra_id} | ID do Produto: {produto_id} | Quantidade: {qntd_produto}"
             container.add_widget(Label(text=texto))
+            butao = Button(text='Deletar')
+            butao.bind(on_press=lambda instance, id=compra_id: self.remover_compra(id))
+            container.add_widget(butao)
+    
+    def remover_compra(self, id):
+        conexao = sqlite3.connect('BD/projeto.db')
+        cursor = conexao.cursor()
+        cursor.execute("DELETE FROM compra WHERE compra_id = ?", (id,))
+        conexao.commit()
+        conexao.close()
+        self.atualizar_dados()

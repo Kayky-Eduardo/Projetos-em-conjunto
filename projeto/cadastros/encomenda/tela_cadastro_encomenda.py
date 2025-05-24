@@ -3,6 +3,7 @@ from kivy.uix.screenmanager import Screen
 from kivy.uix.label import Label
 from kivy.properties import ObjectProperty
 from kivy.lang import Builder
+from kivy.uix.button import Button
 import sqlite3
 import os
 
@@ -42,6 +43,17 @@ class Tela_Cadastro_encomenda(Screen):
         for encomenda_id, cliente_cpf, produto_id, qntd_produto, data_pedido, data_entrega in self.buscar_dados():
             texto = f"ID: {encomenda_id} | CPF do cliente: {cliente_cpf} | ID do produto: {produto_id} | Quantidade: {qntd_produto} | Data pedido: {data_pedido} | Data entrega: {data_entrega}"
             container.add_widget(Label(text=texto))
+            butao = Button(text='Deletar')
+            butao.bind(on_press=lambda instance, id=encomenda_id: self.remover_encomenda(id))
+            container.add_widget(butao)
+    
+    def remover_encomenda(self, id):
+        conexao = sqlite3.connect('BD/projeto.db')
+        cursor = conexao.cursor()
+        cursor.execute("DELETE FROM encomenda WHERE encomenda_id = ?", (id,))
+        conexao.commit()
+        conexao.close()
+        self.atualizar_dados()
 
 
   
