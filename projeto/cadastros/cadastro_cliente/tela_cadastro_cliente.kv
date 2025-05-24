@@ -1,34 +1,51 @@
 <Tela_Cadastro_Cliente>:
     name: "estoque"
-    
-    BoxLayout:
-        orientation: 'vertical'
-        spacing: 10
-        padding: 10
+    FloatLayout:
+        Image:
+            source: 'projeto/img/fundo.png'
+            allow_stretch: True
+            keep_ratio: False
+            size_hint: 1, 1
+            pos_hint: {'x': 0, 'y': 0}
 
-        Button:
-            text: 'Carregar Clientes'
-            size_hint_y: None
-            on_press: root.atualizar_dados()
-            height: '40dp'
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 10
+            padding: 10
+            size: 100, 90
 
-        ScrollView:
-            GridLayout:
-                id: container
-                cols: 1
+            Button:
+                text: 'CARREGAR CLIENTES'
                 size_hint_y: None
-                height: self.minimum_height
-                row_default_height: '40dp'
-                row_force_default: True
+                on_press: root.atualizar_dados()
+                height: '40dp'
+                font_size: 20
+                background_color: 0.5, 0.5, 0.5, 1
+                font_name: "fonte/fontebotao"
 
-        Button:
-            text: 'Ir para Cadastro Clientes'
-            size_hint_y: None
-            height: "40dp"
-            on_press: root.manager.current = "cadastro_cliente"
+            ScrollView:
+                GridLayout:
+                    id: container
+                    cols: 1
+                    size_hint_y: None
+                    height: self.minimum_height
+                    row_default_height: '40dp'
+                    row_force_default: True
 
-        Button:
-            text: 'Voltar'
-            size_hint_y: None
-            height: "40dp"
-            on_press: root.manager.current = "Menu_cadastros"
+            Button:
+                text: 'CADASTRAR CLIENTES'
+                size_hint_y: None
+                height: "40dp"
+                on_press: root.manager.current = "cadastro_cliente"
+                font_size: 20
+                background_color: 0.5, 0.5, 0.5, 1
+                font_name: "fonte/fontebotao"
+
+            Button:
+                text: 'VOLTAR'
+                size_hint_y: None
+                height: "40dp"
+                on_press: root.manager.current = "Menu_cadastros"
+                font_size: 20                
+                background_color: 0.5, 0.5, 0.5, 1
+                font_name: "fonte/fontebotao"

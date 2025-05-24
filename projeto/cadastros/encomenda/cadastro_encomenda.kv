@@ -60,12 +60,17 @@
 
         Button:
             id: enviar
-            text: 'Enviar'
-            font_size: 20
+            text: 'ENVIAR'
+            font_size: 30
             size_hint_y: None
             on_press: root.adicionar_banco()
+            background_color: 0.5, 0.5, 0.5, 1
+            font_name: "fonte/fontebotao"
 
         Button:
-            text: 'Voltar para Encomenda'
+            text: 'VOLTAR'
             size_hint_y: None
+            font_size: 30
             on_press: root.manager.current = "telacadastro_encomenda"
+            background_color: 0.5, 0.5, 0.5, 1
+            font_name: "fonte/fontebotao"

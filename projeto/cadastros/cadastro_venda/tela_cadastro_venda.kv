@@ -7,10 +7,12 @@
         padding: 10
 
         Button:
-            text: 'Carregar vendas'
+            text: 'CARREGAR VENDAS'
             size_hint_y: None
             on_press: root.atualizar_dados()
             height: '40dp'
+            background_color: 0.5, 0.5, 0.5, 1
+            font_name: "fonte/fontebotao"
 
         ScrollView:
             GridLayout:
@@ -22,14 +24,18 @@
                 row_force_default: True
 
         Button:
-            text: 'Ir para cadastro de vendas'
+            text: 'CADASTRAR VENDA'
             size_hint_y: None
             height: "40dp"
             on_press: app.root.current = "cadastro_venda"
+            background_color: 0.5, 0.5, 0.5, 1
+            font_name: "fonte/fontebotao"
         
         Button:
-            text: 'Voltar'
+            text: 'VOLTAR'
             size_hint_y: None
             height: "40dp"
             on_press: app.root.current = "Menu_cadastros"
+            background_color: 0.5, 0.5, 0.5, 1
+            font_name: "fonte/fontebotao"
 
