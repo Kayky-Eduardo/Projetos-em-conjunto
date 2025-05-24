@@ -26,12 +26,20 @@ class Tela_Cadastro_Funcionario(Screen):
     def atualizar_dados(self):
         container = self.ids.container
         container.clear_widgets()
+        conexao = sqlite3.connect('BD/projeto.db')
+        cursor = conexao.cursor()
+
         for funcionario_cpf, cargo_id, nome_funcionario, salario, data_admissao, fim_contrato, senha in self.buscar_dados():
-            texto = f"Funcionario CPF: {funcionario_cpf} | Cargo: {cargo_id} | Nome: {nome_funcionario} | Salário: {salario}\nData Admissão: {data_admissao} | Fim do Contrato {fim_contrato}"
+            cursor.execute ('''
+            SELECT nome_cargo from cargo where cargo_id = ?
+            ''', (cargo_id,))
+            nome_cargo = cursor.fetchone()
+            texto = f"Funcionario CPF: {funcionario_cpf} | Cargo: {nome_cargo[0]} | Nome: {nome_funcionario} | Salário: {salario}\nData Admissão: {data_admissao} | Fim do Contrato: {fim_contrato}"
             container.add_widget(Label(text=texto))
             butao = Button(text='Deletar')
             butao.bind(on_press=lambda instance, cpf=funcionario_cpf: self.remover_funcionario(cpf))
             container.add_widget(butao)
+        conexao.close()
     
     def remover_funcionario(self, cpf):
         conexao = sqlite3.connect('BD/projeto.db')
