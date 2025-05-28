@@ -66,12 +66,18 @@
 
         Button:
             id: enviar
-            text: 'Enviar'
+            text: 'ENVIAR'
             font_size: 20
             size_hint_y: None
             on_press: root.adicionar_banco()
+            font_size: 20
+            background_color: 0.5, 0.5, 0.5, 1
+            font_name: "fonte/fontebotao"
 
         Button:
-            text: 'Voltar para Estoque'
+            text: 'VOLTAR'
             size_hint_y: None
             on_press: root.manager.current = "telaestoque"
+            font_size: 20
+            background_color: 0.5, 0.5, 0.5, 1
+            font_name: "fonte/fontebotao"
