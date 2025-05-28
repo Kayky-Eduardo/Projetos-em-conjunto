@@ -6,10 +6,13 @@
         padding: 10
 
         Button:
-            text: 'Carregar Produtos com Estoque'
+            text: 'CARREGAR'
             size_hint_y: None
             height: "70dp"
             on_press: root.atualizar_dados()
+            font_size: 20
+            background_color: 0.5, 0.5, 0.5, 1
+            font_name: "fonte/fontebotao"
 
         ScrollView:
             GridLayout:
@@ -21,13 +24,19 @@
                 row_force_default: True
 
         Button:
-            text: 'Ir para Cadastro de Produto'
+            text: 'CADASTRAR ESTOQUE'
             size_hint_y: None
             height: "40dp"
             on_press: root.manager.current = "cadastro_produto"
+            font_size: 20
+            background_color: 0.5, 0.5, 0.5, 1
+            font_name: "fonte/fontebotao"
         
         Button:
-            text: 'Voltar'
+            text: 'VOLTAR'
             size_hint_y: None
             height: "40dp"
             on_press: root.manager.current = "menu"
+            font_size: 20
+            background_color: 0.5, 0.5, 0.5, 1
+            font_name: "fonte/fontebotao"
